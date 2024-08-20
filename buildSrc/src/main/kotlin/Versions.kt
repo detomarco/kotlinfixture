@@ -18,7 +18,6 @@ object Versions {
 
     const val kotlin = "1.8.21"
 
-    const val androidGradlePlugin = "8.0.0"
     const val dependencyCheckGradlePlugin = "6.1.1"
     const val detektGradlePlugin = "1.18.1"
     const val dokkaPlugin = "1.8.10"
@@ -43,12 +42,6 @@ object Versions {
     const val easyrandom = "5.0.0"
     const val flextrade = "0.2.0"
     const val marcellogalhardo = "0.0.2"
-
-    object AndroidX {
-        const val testCore = "1.5.0"
-        const val testExtJunit = "1.1.5"
-        const val testRunner = "1.5.2"
-    }
 
     object KotlinX {
         const val serialization = "1.5.0"

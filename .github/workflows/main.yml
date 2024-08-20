@@ -32,10 +32,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assemble check --stacktrace
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1.0.6
-      with:
-        token: ${{secrets.CODECOV_TOKEN}}
+#    - name: Upload coverage to Codecov
+#      uses: codecov/codecov-action@v1.0.6
+#      with:
+#        token: ${{secrets.CODECOV_TOKEN}}
 
     - name: Prepare tag properties
       run: |
