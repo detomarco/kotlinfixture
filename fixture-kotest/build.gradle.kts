@@ -49,5 +49,4 @@ tasks.withType<KotlinCompile> {
 
 tasks.named("check") {
     finalizedBy(rootProject.tasks.named("detekt"))
-    finalizedBy(rootProject.tasks.named("markdownlint"))
 }

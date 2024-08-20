@@ -11,10 +11,11 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 :link-appmattus: https://github.com/appmattus/kotlinfixture[KotlinFixture]
+:link-kotlinfixture: https://github.com/detomarco/kotlinfixture[KotlinFixture]
 
-https://search.maven.org/search?q=g:com.appmattus.fixture[image:https://img.shields.io/maven-central/v/com.appmattus.fixture/fixture[Maven Central]]
-https://github.com/appmattus/kotlinfixture/actions[image:https://github.com/appmattus/kotlinfixture/workflows/CI/badge.svg[CI status]]
-https://codecov.io/gh/appmattus/kotlinfixture[image:https://codecov.io/gh/appmattus/kotlinfixture/branch/main/graph/badge.svg[Coverage status]]
+https://search.maven.org/search?q=g:com.appmattus.fixture[image:https://img.shields.io/maven-central/v/com.detomarco.fixture/fixture[Maven Central]]
+https://github.com/detomarco/kotlinfixture/actions[image:https://github.com/detomarco/kotlinfixture/workflows/CI/badge.svg[CI status]]
+https://codecov.io/gh/detomarco/kotlinfixture[image:https://codecov.io/gh/detomarco/kotlinfixture/branch/main/graph/badge.svg[Coverage status]]
 link:LICENSE.md[image:https://img.shields.io/badge/License-Apache%202.0-blue.svg[License]]
 
 A tool to generate well-defined, but essentially random, input following the
@@ -106,7 +107,7 @@ link:fixture/advanced-customisation.adoc[Advanced engine customisation] is also 
 
 == Kotest integration: property based testing
 
-The library provides {link-appmattus} powered property based testing for https://github.com/kotest/kotest/[Kotest].
+The library provides {link-kotlinfixture} powered property based testing for https://github.com/kotest/kotest/[Kotest].
 
 See link:fixture-kotest/README.adoc[Kotest integration] for more details.
 

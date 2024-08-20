@@ -26,7 +26,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-java@v2
       with:
-        distribution: 'zulu'
+        distribution: 'temurin'
         java-version: '17'
 
     - name: Build with Gradle
@@ -39,13 +39,13 @@ jobs:
 
     - name: Prepare tag properties
       run: |
-        echo "${{secrets.GPG_SIGNING_SECRET_KEY_RING_FILE_BASE64}}" > ~/.gradle/sonatype-appmattus-keys.gpg.b64
-        base64 -d ~/.gradle/sonatype-appmattus-keys.gpg.b64 > ~/.gradle/sonatype-appmattus-keys.gpg
+        echo "${{secrets.GPG_SIGNING_SECRET_KEY_RING_FILE_BASE64}}" > ~/.gradle/sonatype-detomarco-keys.gpg.b64
+        base64 -d ~/.gradle/sonatype-detomarco-keys.gpg.b64 > ~/.gradle/sonatype-detomarco-keys.gpg
         echo "${{secrets.GPG_GRADLE_PROPERTIES}}" > ~/.gradle/gradle.properties
       if: startsWith(github.ref, 'refs/tags/')
 
     - name: Upload tag
-      run: ./gradlew publish --no-daemon --no-parallel -Psigning.secretKeyRingFile=$(echo ~/.gradle/sonatype-appmattus-keys.gpg)
+      run: ./gradlew publish --no-daemon --no-parallel -Psigning.secretKeyRingFile=$(echo ~/.gradle/sonatype-detomarco-keys.gpg)
       if: startsWith(github.ref, 'refs/tags/')
 
     - name: Close and release tag

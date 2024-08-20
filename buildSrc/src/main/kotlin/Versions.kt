@@ -23,7 +23,6 @@ object Versions {
     const val dokkaPlugin = "1.8.10"
     const val gradleMavenPublishPlugin = "0.18.0"
     const val gradleVersionsPlugin = "0.36.0"
-    const val markdownlintGradlePlugin = "0.6.0"
 
     const val classgraph = "4.8.157"
     const val coroutines = "1.6.4"

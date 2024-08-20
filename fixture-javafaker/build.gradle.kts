@@ -28,11 +28,6 @@ dependencies {
     api(kotlin("stdlib-jdk8"))
     api(project(":fixture"))
     api("com.github.javafaker:javafaker:${Versions.javafaker}")
-    api("org.yaml:snakeyaml:android") {
-        version {
-            strictly("1.27")
-        }
-    }
 
     testImplementation("junit:junit:${Versions.junit4}")
     testImplementation(kotlin("test"))
@@ -54,5 +49,4 @@ tasks.withType<KotlinCompile> {
 
 tasks.named("check") {
     finalizedBy(rootProject.tasks.named("detekt"))
-    finalizedBy(rootProject.tasks.named("markdownlint"))
 }

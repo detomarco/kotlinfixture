@@ -21,7 +21,6 @@ import java.net.URI
 plugins {
     kotlin("jvm") version Versions.kotlin apply false
     id("io.gitlab.arturbosch.detekt") version Versions.detektGradlePlugin
-    id("com.appmattus.markdown") version Versions.markdownlintGradlePlugin
     id("com.vanniktech.maven.publish") version Versions.gradleMavenPublishPlugin apply false
     id("org.jetbrains.dokka") version Versions.dokkaPlugin
 }
@@ -37,7 +36,6 @@ apply(from = "$rootDir/owaspDependencyCheck.gradle.kts")
 
 allprojects {
     repositories {
-        google()
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
     }
@@ -57,7 +55,7 @@ allprojects {
 
                     sourceLink {
                         localDirectory.set(rootDir)
-                        remoteUrl.set(URI("https://github.com/appmattus/kotlinfixture/blob/main").toURL())
+                        remoteUrl.set(URI("https://github.com/detomarco/kotlinfixture/blob/main").toURL())
                         remoteLineSuffix.set("#L")
                     }
                 }
@@ -81,8 +79,6 @@ detekt {
         exclude("**/resources/**")
         exclude("**/build/**")
     }.files)
-
-    // input = files("$projectDir")
 
     buildUponDefaultConfig = true
 
