@@ -17,7 +17,6 @@
 import org.jetbrains.dokka.gradle.DokkaPlugin
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jreleaser.model.Active
-import org.jreleaser.model.internal.project.Project
 import java.net.URI
 
 plugins {
