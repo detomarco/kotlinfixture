@@ -74,9 +74,9 @@ publishing{
     publications {
         create<MavenPublication>("Maven") {
             from(components["java"])
-            groupId = "de.tschuehly"
-            artifactId = "spring-view-component-thymeleaf"
-            description = "Create server rendered components with thymeleaf"
+            groupId = "com.detomarco.kotlinfixture"
+            artifactId = "fixture"
+            description = "Fixtures for Kotlin providing generated values for unit testing"
         }
         withType<MavenPublication> {
             pom {
