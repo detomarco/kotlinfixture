@@ -38,7 +38,7 @@ Include the following dependency in your `build.gradle.kts` file:
 [source,kotlin]
 ._build.gradle.kts_
 ----
-testImplementation("com.detomarco.kotlinfixture:fixture:<latest-version>")
+testImplementation("io.github.detomarco.kotlinfixture:fixture:<latest-version>")
 ----
 
 Simply create a fixture and invoke it with the type to be generated:

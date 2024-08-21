@@ -15,5 +15,5 @@
  */
 
 include(
-    "fixture",
+    "fixture"
 )
