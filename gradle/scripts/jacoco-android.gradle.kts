@@ -20,9 +20,9 @@ val jacocoTask = tasks.register<JacocoReport>("jacocoTestReport") {
     dependsOn(tasks.named("testDebugUnitTest"))
 
     reports {
-        html.required.set(true)
-        xml.required.set(true)
-        csv.required.set(false)
+        html.required = true
+        xml.required = true
+        csv.required = false
     }
 
     val fileFilter = listOf(

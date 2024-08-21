@@ -43,7 +43,7 @@ allprojects {
         maven { setUrl("https://jitpack.io") }
     }
 
-    group = "com.detomarco.kotlinfixture"
+    group = "io.github.detomarco"
 //    version = (System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
 //        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
 
@@ -54,10 +54,6 @@ allprojects {
             dokkaSourceSets {
                 configureEach {
                     skipDeprecated.set(true)
-
-                    if (name.startsWith("ios")) {
-                        displayName.set("ios")
-                    }
 
                     sourceLink {
                         localDirectory.set(rootDir)
@@ -97,16 +93,16 @@ jreleaser {
         description = "Fixtures for Kotlin providing generated values for unit testing"
     }
     signing {
-        active.set(Active.ALWAYS)
-        armored.set(true)
+        active = Active.ALWAYS
+        armored = true
     }
 
     deploy {
         maven {
             mavenCentral {
                 create("sonatype") {
-                    active.set(Active.ALWAYS)
-                    url.set("https://central.sonatype.com/api/v1/publisher")
+                    active = Active.ALWAYS
+                    url = "https://central.sonatype.com/api/v1/publisher"
                     stagingRepositories.add("fixture/build/staging-deploy")
                 }
             }

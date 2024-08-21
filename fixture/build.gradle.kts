@@ -62,13 +62,13 @@ java {
     withJavadocJar()
 }
 
-tasks.jar{
+tasks.jar {
     enabled = true
     // Remove `plain` postfix from jar file name
     archiveClassifier.set("")
 }
 
-publishing{
+publishing {
     publications {
         create<MavenPublication>("Maven") {
             from(components["java"])
@@ -78,26 +78,26 @@ publishing{
         withType<MavenPublication> {
             pom {
                 packaging = "jar"
-                name.set("kotlinfixture")
-                description.set("Kotlin Fixture")
-                url.set("https://github.com/detomarco/kotlinfixture")
-                inceptionYear.set("2024")
+                name = "kotlinfixture"
+                description = "Kotlin Fixture"
+                url = "https://github.com/detomarco/kotlinfixture"
+                inceptionYear = "2024"
                 licenses {
                     license {
-                        name.set("Apache-2.0")
-                        url.set("https://spdx.org/licenses/Apache-2.0.html")
+                        name = "Apache-2.0"
+                        url = "https://spdx.org/licenses/Apache-2.0.html"
                     }
                 }
                 developers {
                     developer {
-                        id.set("detomarco")
-                        name.set("Marco De Toma")
+                        id = "detomarco"
+                        name = "Marco De Toma"
                     }
                 }
                 scm {
-                    connection.set("scm:git:https://github.com/detomarco/kotlinfixture.git")
-                    developerConnection.set("scm:git:ssh://github.com/detomarco/kotlinfixture.git")
-                    url.set("http://github.com/detomarco/kotlinfixture")
+                    connection = "scm:git:https://github.com/detomarco/kotlinfixture.git"
+                    developerConnection = "scm:git:ssh://github.com/detomarco/kotlinfixture.git"
+                    url = "http://github.com/detomarco/kotlinfixture"
                 }
             }
         }
