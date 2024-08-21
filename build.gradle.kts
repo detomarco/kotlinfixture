@@ -21,8 +21,8 @@ import java.net.URI
 plugins {
     kotlin("jvm") version Versions.kotlin apply false
     id("io.gitlab.arturbosch.detekt") version Versions.detektGradlePlugin
-    id("com.vanniktech.maven.publish") version Versions.gradleMavenPublishPlugin apply false
     id("org.jetbrains.dokka") version Versions.dokkaPlugin
+    id("org.jreleaser") version "1.13.1"
 }
 
 buildscript {
@@ -40,8 +40,10 @@ allprojects {
         maven { setUrl("https://jitpack.io") }
     }
 
-    version = (System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
-        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
+//    version = (System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
+//        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
+
+    version = "0.0.1"
 
     plugins.withType<DokkaPlugin> {
         tasks.withType<DokkaTask>().configureEach {
