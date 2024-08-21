@@ -10,6 +10,10 @@ on:
     branches:
     - main
 
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
 jobs:
 
   dependency-check:
@@ -28,7 +32,7 @@ jobs:
     - name: Dependency Check
       env:
         NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-      run: ./gradlew dependencyCheckAnalyze
+      run: ./gradlew dependencyCheckAnalyze --stacktrace
 
   test:
     runs-on: ubuntu-latest
