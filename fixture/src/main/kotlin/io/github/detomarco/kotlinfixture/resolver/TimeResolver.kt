@@ -16,7 +16,6 @@
 
 package io.github.detomarco.kotlinfixture.resolver
 
-import android.annotation.SuppressLint
 import io.github.detomarco.kotlinfixture.Context
 import io.github.detomarco.kotlinfixture.Unresolved
 import io.github.detomarco.kotlinfixture.typeOf
@@ -40,7 +39,6 @@ import java.util.Date
 import java.util.TimeZone
 
 @Suppress("TooManyFunctions")
-@SuppressLint("NewApi")
 internal class TimeResolver : Resolver {
 
     @Suppress("ComplexMethod")

@@ -23,7 +23,6 @@ import io.github.detomarco.kotlinfixture.decorator.filter.FilterDecorator
 import io.github.detomarco.kotlinfixture.decorator.logging.LoggingDecorator
 import io.github.detomarco.kotlinfixture.decorator.recursion.RecursionDecorator
 import io.github.detomarco.kotlinfixture.resolver.AbstractClassResolver
-import io.github.detomarco.kotlinfixture.resolver.AndroidUriResolver
 import io.github.detomarco.kotlinfixture.resolver.ArrayKTypeResolver
 import io.github.detomarco.kotlinfixture.resolver.AtomicKTypeResolver
 import io.github.detomarco.kotlinfixture.resolver.BigDecimalResolver
@@ -119,7 +118,6 @@ data class Configuration internal constructor(
             PrimitiveResolver(),
             UrlResolver(),
             UriResolver(),
-            AndroidUriResolver(),
             BigDecimalResolver(),
             BigIntegerResolver(),
             UuidResolver(),
