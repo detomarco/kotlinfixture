@@ -93,7 +93,8 @@ jreleaser {
     project {
         license = "APACHE-2.0"
         authors = listOf("Appmattus", "detomarco")
-        copyright="2019-2023 Appmattus, 2024 detomarco"
+        copyright = "2019-2023 Appmattus, 2024 detomarco"
+        description = "Fixtures for Kotlin providing generated values for unit testing"
     }
     signing {
         active.set(Active.ALWAYS)
