@@ -75,18 +75,9 @@ dependencies {
 }
 
 detekt {
-    source = files(fileTree(projectDir).matching {
-        include("**/*.kt")
-        include("**/*.kts")
-        exclude("**/resources/**")
-        exclude("**/build/**")
-    }.files)
-
     buildUponDefaultConfig = true
-
     autoCorrect = true
-
-    config = files("detekt-config.yml")
+    config.setFrom(files("detekt-config.yml"))
 }
 
 jreleaser {
@@ -117,6 +108,7 @@ jreleaser {
 
 
 dependencyCheck {
+    nvd.apiKey = System.getenv("NVD_API_KEY")
     failBuildOnCVSS = 0f
     suppressionFile = "project-suppression.xml"
     autoUpdate = System.getProperty("dependencyCheckAutoUpdate")?.toString()?.trim()?.lowercase() != "false"

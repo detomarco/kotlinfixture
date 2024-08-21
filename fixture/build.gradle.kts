@@ -16,7 +16,6 @@
  */
 
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jreleaser.model.Active
 
 plugins {
     kotlin("jvm")
@@ -37,6 +36,7 @@ val serializationVersion: String by project
 val marcellogalhardoVersion: String by project
 val flextradeVersion: String by project
 val easyrandomVersion: String by project
+val kotestVersion: String by project
 val kotlinxSerializatioVersion: String by project
 
 dependencies {
@@ -66,6 +66,7 @@ dependencies {
     testImplementation("com.github.marcellogalhardo:kotlin-fixture:${marcellogalhardoVersion}")
     testImplementation("com.flextrade.jfixture:kfixture:${flextradeVersion}")
     testImplementation("org.jeasy:easy-random-core:${easyrandomVersion}")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
 }
 
 java {
