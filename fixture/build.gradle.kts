@@ -22,9 +22,7 @@ plugins {
     kotlin("jvm")
     id("org.jetbrains.dokka")
     id("org.jetbrains.kotlin.plugin.serialization") version Versions.kotlin
-    id("org.jreleaser")
     id("maven-publish")
-    id("signing")
 }
 
 apply(from = "$rootDir/gradle/scripts/jacoco.gradle.kts")
@@ -74,7 +72,6 @@ publishing{
     publications {
         create<MavenPublication>("Maven") {
             from(components["java"])
-            groupId = "com.detomarco.kotlinfixture"
             artifactId = "fixture"
             description = "Fixtures for Kotlin providing generated values for unit testing"
         }
@@ -108,26 +105,6 @@ publishing{
     repositories {
         maven {
             url = layout.buildDirectory.dir("staging-deploy").get().asFile.toURI()
-        }
-    }
-}
-
-jreleaser {
-    signing {
-        active.set(Active.ALWAYS)
-        armored.set(true)
-    }
-    deploy {
-        maven {
-            nexus2 {
-                create("maven-central") {
-                    active.set(Active.ALWAYS)
-                    url.set("https://s01.oss.sonatype.org/service/local")
-                    closeRepository.set(false)
-                    releaseRepository.set(false)
-                    stagingRepositories.add("build/staging-deploy")
-                }
-            }
         }
     }
 }

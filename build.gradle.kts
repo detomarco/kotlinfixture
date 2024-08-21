@@ -16,6 +16,7 @@
 
 import org.jetbrains.dokka.gradle.DokkaPlugin
 import org.jetbrains.dokka.gradle.DokkaTask
+import org.jreleaser.model.Active
 import java.net.URI
 
 plugins {
@@ -23,6 +24,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt") version Versions.detektGradlePlugin
     id("org.jetbrains.dokka") version Versions.dokkaPlugin
     id("org.jreleaser") version "1.13.1"
+    id("signing")
 }
 
 buildscript {
@@ -40,6 +42,7 @@ allprojects {
         maven { setUrl("https://jitpack.io") }
     }
 
+    group = "com.detomarco.kotlinfixture"
 //    version = (System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
 //        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
 
@@ -87,4 +90,24 @@ detekt {
     autoCorrect = true
 
     config = files("detekt-config.yml")
+}
+
+jreleaser {
+    signing {
+        active.set(Active.ALWAYS)
+        armored.set(true)
+    }
+    deploy {
+        maven {
+            nexus2 {
+                create("maven-central") {
+                    active.set(Active.ALWAYS)
+                    url.set("https://s01.oss.sonatype.org/service/local")
+                    closeRepository.set(false)
+                    releaseRepository.set(false)
+                    stagingRepositories.add("build/staging-deploy")
+                }
+            }
+        }
+    }
 }
