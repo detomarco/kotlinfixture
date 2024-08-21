@@ -17,6 +17,7 @@
 import org.jetbrains.dokka.gradle.DokkaPlugin
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jreleaser.model.Active
+import org.jreleaser.model.internal.project.Project
 import java.net.URI
 
 plugins {
@@ -89,6 +90,11 @@ detekt {
 }
 
 jreleaser {
+    project {
+        license = "APACHE-2.0"
+        authors = listOf("Appmattus", "detomarco")
+        copyright="2019-2023 Appmattus, 2024 detomarco"
+    }
     signing {
         active.set(Active.ALWAYS)
         armored.set(true)
