@@ -15,15 +15,11 @@
  */
 
 import com.adarshr.gradle.testlogger.theme.ThemeType
-import org.jetbrains.dokka.gradle.DokkaPlugin
-import org.jetbrains.dokka.gradle.DokkaTask
 import org.jreleaser.model.Active
-import java.net.URI
 
 plugins {
     kotlin("jvm") apply false
     id("io.gitlab.arturbosch.detekt")
-    id("org.jetbrains.dokka")
     id("org.jreleaser")
     id("signing")
     id("com.adarshr.test-logger")
@@ -47,22 +43,6 @@ allprojects {
 //        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
 
     version = "0.0.3"
-
-    plugins.withType<DokkaPlugin> {
-        tasks.withType<DokkaTask>().configureEach {
-            dokkaSourceSets {
-                configureEach {
-                    skipDeprecated.set(true)
-
-                    sourceLink {
-                        localDirectory.set(rootDir)
-                        remoteUrl.set(URI("https://github.com/detomarco/kotlinfixture/blob/main").toURL())
-                        remoteLineSuffix.set("#L")
-                    }
-                }
-            }
-        }
-    }
 
     testlogger {
         theme = ThemeType.MOCHA
