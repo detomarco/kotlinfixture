@@ -110,8 +110,8 @@ jreleaser {
 dependencyCheck {
     nvd.apiKey = System.getenv("NVD_API_KEY")
     failBuildOnCVSS = 0f
-    suppressionFile = "project-suppression.xml"
-    autoUpdate = System.getProperty("dependencyCheckAutoUpdate")?.toString()?.trim()?.lowercase() != "false"
+    suppressionFile = "cve-suppressions.xml"
+    autoUpdate = true
     // Disable the .NET Assembly Analyzer. Requires an external tool, and this project likely won't ever have .NET DLLs.
     analyzers.assemblyEnabled = false
 }
