@@ -59,13 +59,12 @@ dependencies {
     testImplementation("org.mockito.kotlin:mockito-kotlin:${mockitoKotlinVersion}")
 
     testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${kotlinxSerializatioVersion}")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
 
     // Used for ComparisonTest
-    @Suppress("GradleDependency")
     testImplementation("com.github.marcellogalhardo:kotlin-fixture:${marcellogalhardoVersion}")
     testImplementation("com.flextrade.jfixture:kfixture:${flextradeVersion}")
     testImplementation("org.jeasy:easy-random-core:${easyrandomVersion}")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
 }
 
 java {
