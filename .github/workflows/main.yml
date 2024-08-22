@@ -65,7 +65,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v4
 
     - name: Publish package to local staging directory
-      run: ./gradlew publish
+      run: ./gradlew clean publish
 
     - name: Publish package to maven central
       env:
