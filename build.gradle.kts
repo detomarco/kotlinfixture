@@ -38,11 +38,9 @@ allprojects {
         maven { setUrl("https://jitpack.io") }
     }
 
-    group = "io.github.detomarco"
-//    version = (System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
-//        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
-
-    version = "0.0.3"
+    group = "io.github.detomarco.kotlinfixture"
+    version = (System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
+        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
 
     testlogger {
         theme = ThemeType.MOCHA
@@ -75,12 +73,13 @@ jreleaser {
     deploy {
         maven {
             mavenCentral {
-                create("sonatype") {
+                register("sonatype") {
                     active = Active.ALWAYS
                     url = "https://central.sonatype.com/api/v1/publisher"
                     stagingRepositories.add("fixture/build/staging-deploy")
                 }
             }
+
         }
     }
 }
