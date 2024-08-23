@@ -103,6 +103,10 @@ publishing {
                         id = "detomarco"
                         name = "Marco De Toma"
                     }
+                    developer {
+                        id = "Appmattus Limited"
+                        name = "Matthew Dolan"
+                    }
                 }
                 scm {
                     connection = "scm:git:https://github.com/detomarco/kotlinfixture.git"

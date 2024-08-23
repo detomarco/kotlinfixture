@@ -1,5 +1,6 @@
 /*
  * Copyright 2021-2023 Appmattus Limited
+ *           2024 Detomarco Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +15,12 @@
  * limitations under the License.
  */
 
+import org.gradle.model.internal.core.ModelNodes.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
+    id("maven-publish")
 }
 
 val javaFakerVersion: String by project
@@ -45,6 +48,57 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
     withSourcesJar()
     withJavadocJar()
+}
+
+tasks.jar {
+    enabled = true
+    // Remove `plain` postfix from jar file name
+    archiveClassifier.set("")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("Maven") {
+            from(components["java"])
+            artifactId = "fixture-javafaker"
+            description = "kotlinfixture module to generate values with a closer match to real data using"
+        }
+        withType<MavenPublication> {
+            pom {
+                packaging = "jar"
+                name = "kotlinfixture-javafaker"
+                description = "Kotlin Fixture - JavaFaker"
+                url = "https://github.com/detomarco/kotlinfixture"
+                inceptionYear = "2024"
+                licenses {
+                    license {
+                        name = "Apache-2.0"
+                        url = "https://spdx.org/licenses/Apache-2.0.html"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "detomarco"
+                        name = "Marco De Toma"
+                    }
+                    developer {
+                        id = "Appmattus Limited"
+                        name = "Matthew Dolan"
+                    }
+                }
+                scm {
+                    connection = "scm:git:https://github.com/detomarco/kotlinfixture.git"
+                    developerConnection = "scm:git:ssh://github.com/detomarco/kotlinfixture.git"
+                    url = "http://github.com/detomarco/kotlinfixture"
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            url = layout.buildDirectory.dir("staging-deploy").get().asFile.toURI()
+        }
+    }
 }
 
 tasks.withType<KotlinCompile> {
