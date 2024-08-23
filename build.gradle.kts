@@ -44,7 +44,7 @@ allprojects {
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektGradlePluginVersion")
     }
     group = "io.github.detomarco.kotlinfixture"
-    version = (System.getenv("LIB_VERSION") ?: System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
+    version = (System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
         ?.replaceFirst("refs/tags/", "") ?: "unspecified"
 
     testlogger {
