@@ -20,23 +20,25 @@ plugins {
     kotlin("jvm")
 }
 
-val kotlinVersion: String by project
+val javaFakerVersion: String by project
+val mockitoKotlinVersion: String by project
 val kotlinxVersion: String by project
 val junit4Version: String by project
-val generexVersion: String by project
 
 dependencies {
     api(kotlin("stdlib-jdk8"))
     api(project(":fixture"))
-    api("com.github.mifmif:generex:$generexVersion")
+    api("com.github.javafaker:javafaker:$javaFakerVersion")
 
     testImplementation("junit:junit:$junit4Version")
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit"))
+    testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
 
     testImplementation(kotlin("reflect"))
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinxVersion")
 }
+
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17

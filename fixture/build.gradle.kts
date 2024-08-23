@@ -23,8 +23,6 @@ plugins {
     id("maven-publish")
 }
 
-apply(from = "$rootDir/gradle/scripts/jacoco.gradle.kts")
-
 val classgraphVersion: String by project
 val jodaTimeVersion: String by project
 val threeTenVersion: String by project
