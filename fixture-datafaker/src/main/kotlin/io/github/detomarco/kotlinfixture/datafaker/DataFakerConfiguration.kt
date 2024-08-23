@@ -17,12 +17,12 @@
 package io.github.detomarco.kotlinfixture.datafaker
 
 import io.github.detomarco.kotlinfixture.config.ConfigurationBuilder
-import io.github.detomarco.kotlinfixture.decorator.fake.fakeStrategy
 import io.github.detomarco.kotlinfixture.datafaker.option.CreditCard
 import io.github.detomarco.kotlinfixture.datafaker.option.IpAddress
 import io.github.detomarco.kotlinfixture.datafaker.option.Password
 import io.github.detomarco.kotlinfixture.datafaker.option.Temperature
 import io.github.detomarco.kotlinfixture.datafaker.option.UserAgent
+import io.github.detomarco.kotlinfixture.decorator.fake.fakeStrategy
 import net.datafaker.Faker
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit

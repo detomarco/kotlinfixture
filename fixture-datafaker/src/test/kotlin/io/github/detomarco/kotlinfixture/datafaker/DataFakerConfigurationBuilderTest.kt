@@ -39,7 +39,7 @@ class DataFakerConfigurationBuilderTest {
                 creditCard = CreditCard.Visa
             }.build()
 
-        configuration.creditCard shouldBe  CreditCard.Visa
+        configuration.creditCard shouldBe CreditCard.Visa
         configuration.creditCard shouldBe configuration.creditCard
     }
 
@@ -134,7 +134,7 @@ class DataFakerConfigurationBuilderTest {
             }.build()
 
         configuration.temperature shouldBe Temperature.Fahrenheit
-     }
+    }
 
     @Test
     fun `can override userAgent`() {
@@ -142,7 +142,7 @@ class DataFakerConfigurationBuilderTest {
             userAgent = UserAgent.Safari
         }.build()
 
-        configuration.userAgent shouldBe  UserAgent.Safari
+        configuration.userAgent shouldBe UserAgent.Safari
     }
 
     @Test
@@ -170,7 +170,7 @@ class DataFakerConfigurationBuilderTest {
             removeProperty("name")
         }.build()
 
-            configuration.properties["name"].shouldBeNull()
+        configuration.properties["name"].shouldBeNull()
     }
 
     @Test

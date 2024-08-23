@@ -25,6 +25,7 @@ import io.kotest.matchers.booleans.shouldBeFalse
 import io.kotest.matchers.booleans.shouldBeTrue
 import io.kotest.matchers.ints.shouldBeInRange
 import io.kotest.matchers.shouldBe
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import java.util.Locale
 import java.util.UUID
@@ -96,6 +97,24 @@ class DataFakerStrategyTest {
         }
 
         fixture<Person>().creditCard.isAmex().shouldBeTrue()
+    }
+
+    @Test
+    @Disabled
+    fun `creditCard can be overridden in creation`() {
+        val fixture = kotlinFixture {
+            dataFakerStrategy {
+                creditCard = CreditCard.AmericanExpress
+            }
+        }
+
+        val creditCard = fixture<Person> {
+            dataFakerStrategy {
+                creditCard = CreditCard.JCB
+            }
+        }.creditCard
+
+        creditCard.isJcb().shouldBeTrue()
     }
 
     @Test
