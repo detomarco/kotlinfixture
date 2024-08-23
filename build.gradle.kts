@@ -15,8 +15,6 @@
  */
 
 import com.adarshr.gradle.testlogger.theme.ThemeType
-import org.fusesource.jansi.Ansi
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jreleaser.model.Active
 
 plugins {
