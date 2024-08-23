@@ -11,7 +11,7 @@ endif::[]
 ._build.gradle.kts_
 ----
 // Add for Java Faker integration
-testImplementation("com.appmattus.fixture:fixture-javafaker:<latest-version>")
+testImplementation("io.github.detomarco.kotlinfixture:fixture-javafaker:<latest-version>")
 ----
 
 The http://dius.github.io/java-faker/[Java Faker] library generates

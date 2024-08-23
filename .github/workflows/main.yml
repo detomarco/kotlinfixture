@@ -67,7 +67,7 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    needs: [test, dependency-check, lint]
+    needs: [test, lint]
     env:
         JRELEASER_MAVENCENTRAL_SONATYPE_USERNAME: ${{ secrets.JRELEASER_MAVENCENTRAL_SONATYPE_USERNAME }}
         JRELEASER_MAVENCENTRAL_SONATYPE_TOKEN: ${{ secrets.JRELEASER_MAVENCENTRAL_SONATYPE_TOKEN }}

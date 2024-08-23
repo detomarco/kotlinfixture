@@ -11,7 +11,7 @@ endif::[]
 ._build.gradle.kts_
 ----
 // Add for Generex integration
-testImplementation("com.appmattus.fixture:fixture-generex:<latest-version>")
+testImplementation("io.github.detomarco.kotlinfixture:fixture-generex:<latest-version>")
 ----
 
 The https://github.com/mifmif/Generex[Generex] library generates random
