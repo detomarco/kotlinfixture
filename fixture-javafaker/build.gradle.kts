@@ -26,16 +26,15 @@ plugins {
 val javaFakerVersion: String by project
 val mockitoKotlinVersion: String by project
 val kotlinxVersion: String by project
-val junit4Version: String by project
+val junitVersion: String by project
 
 dependencies {
     api(kotlin("stdlib-jdk8"))
     api(project(":fixture"))
     api("com.github.javafaker:javafaker:$javaFakerVersion")
 
-    testImplementation("junit:junit:$junit4Version")
-    testImplementation(kotlin("test"))
-    testImplementation(kotlin("test-junit"))
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation(kotlin("test-junit5"))
     testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
 
     testImplementation(kotlin("reflect"))

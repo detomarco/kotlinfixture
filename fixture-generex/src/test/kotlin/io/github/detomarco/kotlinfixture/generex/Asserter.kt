@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.detomarco.kotlinfixture
+package io.github.detomarco.kotlinfixture.generex
 
 import kotlin.test.fail
 

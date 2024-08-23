@@ -24,7 +24,7 @@ plugins {
 }
 
 val kotestVersion: String by project
-val junit4Version: String by project
+val junitVersion: String by project
 val mockitoKotlinVersion: String by project
 val kotlinxVersion: String by project
 
@@ -33,9 +33,9 @@ dependencies {
     api(project(":fixture"))
     api("io.kotest:kotest-property-jvm:$kotestVersion")
 
-    testImplementation("junit:junit:$junit4Version")
-    testImplementation(kotlin("test"))
-    testImplementation(kotlin("test-junit"))
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
+    testImplementation(kotlin("test-junit5"))
     testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
 
     testImplementation(kotlin("reflect"))

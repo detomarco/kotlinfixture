@@ -15,6 +15,8 @@
  */
 
 import com.adarshr.gradle.testlogger.theme.ThemeType
+import org.fusesource.jansi.Ansi
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jreleaser.model.Active
 
 plugins {
@@ -32,12 +34,15 @@ allprojects {
 
     apply {
         plugin("com.adarshr.test-logger")
+        plugin("io.gitlab.arturbosch.detekt")
     }
     repositories {
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
     }
-
+    dependencies {
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektGradlePluginVersion")
+    }
     group = "io.github.detomarco.kotlinfixture"
     version = (System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
         ?.replaceFirst("refs/tags/", "") ?: "unspecified"
@@ -46,17 +51,23 @@ allprojects {
         theme = ThemeType.MOCHA
         showSimpleNames = true
     }
+
+    detekt {
+        allRules = true
+        buildUponDefaultConfig = true
+        autoCorrect = System.getProperty("autoCorrect") == "true"
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
 }
 
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektGradlePluginVersion")
 }
 
-detekt {
-    buildUponDefaultConfig = true
-    autoCorrect = true
-    config.setFrom(files("detekt-config.yml"))
-}
+
 
 jreleaser {
     project {

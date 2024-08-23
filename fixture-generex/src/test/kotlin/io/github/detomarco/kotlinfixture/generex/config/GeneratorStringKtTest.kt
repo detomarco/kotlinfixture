@@ -16,7 +16,7 @@
 
 package io.github.detomarco.kotlinfixture.generex.config
 
-import io.github.detomarco.kotlinfixture.assertIsRandom
+import io.github.detomarco.kotlinfixture.generex.assertIsRandom
 import io.github.detomarco.kotlinfixture.kotlinFixture
 import kotlin.random.Random
 import kotlin.test.Test
@@ -30,7 +30,6 @@ class GeneratorStringKtTest {
 
     @Test
     fun `regexToRandom using regex generates string matching regex`() {
-
         val fixture = kotlinFixture {
             factory<String> { regexToRandom(regex) }
         }
@@ -46,7 +45,6 @@ class GeneratorStringKtTest {
 
     @Test
     fun `regexToRandom using regex is random`() {
-
         val fixture = kotlinFixture {
             factory<String> { regexToRandom(regex) }
         }
@@ -74,7 +72,6 @@ class GeneratorStringKtTest {
 
     @Test
     fun `regexToRandom using string generates string matching regex`() {
-
         val fixture = kotlinFixture {
             factory<String> { regexToRandom(pattern) }
         }
@@ -90,7 +87,6 @@ class GeneratorStringKtTest {
 
     @Test
     fun `regexToRandom using string is random`() {
-
         val fixture = kotlinFixture {
             factory<String> { regexToRandom(pattern) }
         }

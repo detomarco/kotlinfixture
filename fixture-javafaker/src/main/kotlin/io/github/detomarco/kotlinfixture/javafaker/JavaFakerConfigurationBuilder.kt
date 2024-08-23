@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package io.github.detomarco.kotlinfixture.decorator.fake.javafaker
+package io.github.detomarco.kotlinfixture.javafaker
 
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.CreditCard
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.IpAddress
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.Temperature
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.UserAgent
-import io.github.detomarco.kotlinfixture.toUnmodifiableMap
 import com.github.javafaker.Faker
+import io.github.detomarco.kotlinfixture.javafaker.option.IpAddress
+import io.github.detomarco.kotlinfixture.javafaker.option.Temperature
+import io.github.detomarco.kotlinfixture.javafaker.option.UserAgent
+import io.github.detomarco.kotlinfixture.toUnmodifiableMap
 import java.util.Locale
 
 /**

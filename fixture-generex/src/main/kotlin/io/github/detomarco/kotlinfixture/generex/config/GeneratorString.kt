@@ -37,7 +37,8 @@ import io.github.detomarco.kotlinfixture.config.Generator
  * println(fixture<DataClass>()) // DataClass(index=m3, value=CGJ)
  * ```
  *
- * IMPORTANT: Be careful with object creation inside the generation function as it will be called for every instance of the object you create.
+ * IMPORTANT: Be careful with object creation inside the generation function
+ *             as it will be called for every instance of the object you create.
  */
 fun Generator<String>.regexToRandom(regex: String, minLength: Int = 1, maxLength: Int = Int.MAX_VALUE): String {
     return Generex(regex).apply {
@@ -63,7 +64,8 @@ fun Generator<String>.regexToRandom(regex: String, minLength: Int = 1, maxLength
  * println(fixture<DataClass>()) // DataClass(index=m3, value=CGJ)
  * ```
  *
- * IMPORTANT: Be careful with object creation inside the generation function as it will be called for every instance of the object you create.
+ * IMPORTANT: Be careful with object creation inside the generation function as it will be called
+ *              for every instance of the object you create.
  */
 fun Generator<String>.regexToRandom(regex: Regex, minLength: Int = 1, maxLength: Int = Int.MAX_VALUE): String {
     return regexToRandom(regex.pattern, minLength, maxLength)

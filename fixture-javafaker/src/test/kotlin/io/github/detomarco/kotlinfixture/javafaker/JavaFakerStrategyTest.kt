@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package io.github.detomarco.kotlinfixture.decorator.fake.javafaker
+package io.github.detomarco.kotlinfixture.javafaker
 
 import io.github.detomarco.kotlinfixture.assertIsRandom
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.CreditCard
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.IpAddress
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.Password
+import io.github.detomarco.kotlinfixture.javafaker.option.CreditCard
+import io.github.detomarco.kotlinfixture.javafaker.option.IpAddress
+import io.github.detomarco.kotlinfixture.javafaker.option.Password
 import io.github.detomarco.kotlinfixture.kotlinFixture
-import org.junit.Test
 import java.util.Locale
 import java.util.UUID
+import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue

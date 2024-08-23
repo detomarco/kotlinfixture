@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package io.github.detomarco.kotlinfixture.decorator.fake.javafaker
+package io.github.detomarco.kotlinfixture.javafaker
 
+import com.github.javafaker.Faker
 import io.github.detomarco.kotlinfixture.config.ConfigurationBuilder
 import io.github.detomarco.kotlinfixture.decorator.fake.fakeStrategy
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.CreditCard
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.IpAddress
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.Password
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.Temperature
-import io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option.UserAgent
-import com.github.javafaker.Faker
+import io.github.detomarco.kotlinfixture.javafaker.option.CreditCard
+import io.github.detomarco.kotlinfixture.javafaker.option.IpAddress
+import io.github.detomarco.kotlinfixture.javafaker.option.Password
+import io.github.detomarco.kotlinfixture.javafaker.option.Temperature
+import io.github.detomarco.kotlinfixture.javafaker.option.UserAgent
 import java.time.LocalDate
 import java.time.ZoneId
 import java.time.temporal.ChronoUnit
@@ -80,7 +80,7 @@ data class JavaFakerConfiguration internal constructor(
             entry("aircraft") { aviation().aircraft() },
             entry("airport") { aviation().airport() },
             @Suppress("SpellCheckingInspection")
-            entry("METAR") { aviation().METAR() },
+            (entry("METAR") { aviation().METAR() }),
 
             // Business
             entry("creditCardExpiry") { business().creditCardExpiry() },
@@ -89,15 +89,15 @@ data class JavaFakerConfiguration internal constructor(
 
             // Code
             @Suppress("SpellCheckingInspection")
-            entry("asin") { code().asin() },
+            (entry("asin") { code().asin() }),
             entry("ean13") { code().ean13() },
             entry("ean8") { code().ean8() },
             @Suppress("SpellCheckingInspection")
-            entry("gtin13") { code().gtin13() },
+            (entry("gtin13") { code().gtin13() }),
             @Suppress("SpellCheckingInspection")
-            entry("gtin8") { code().gtin8() },
+            (entry("gtin8") { code().gtin8() }),
             @Suppress("SpellCheckingInspection")
-            entry("imei") { code().imei() },
+            (entry("imei") { code().imei() }),
             entry("isbn10") { code().isbn10(it.isbn10Separator) },
             entry("isbn13") { code().isbn13(it.isbn13Separator) },
             entry("isbnGroup") { code().isbnGroup() },
@@ -162,7 +162,7 @@ data class JavaFakerConfiguration internal constructor(
                 }
             },
             @Suppress("SpellCheckingInspection")
-            entry("iban") { finance().iban() },
+            (entry("iban") { finance().iban() }),
 
             // IdNumber
             entry("ssn") { idNumber().ssnValid() },
@@ -179,10 +179,10 @@ data class JavaFakerConfiguration internal constructor(
             },
             entry("ipV4Address") { internet().ipV4Address() },
             @Suppress("SpellCheckingInspection")
-            entry("ipV4Cidr") { internet().ipV4Cidr() },
+            (entry("ipV4Cidr") { internet().ipV4Cidr() }),
             entry("ipV6Address") { internet().ipV6Address() },
             @Suppress("SpellCheckingInspection")
-            entry("ipV6Cidr") { internet().ipV6Cidr() },
+            (entry("ipV6Cidr") { internet().ipV6Cidr() }),
             entry("macAddress") { internet().macAddress() },
             entry("password") {
                 internet().password(
@@ -218,7 +218,7 @@ data class JavaFakerConfiguration internal constructor(
 
             // Stock
             @Suppress("SpellCheckingInspection")
-            entry("nsdqSymbol") { stock().nsdqSymbol() },
+            (entry("nsdqSymbol") { stock().nsdqSymbol() }),
             entry("nyseSymbol") { stock().nyseSymbol() },
 
             // Weather

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.detomarco.kotlinfixture.decorator.fake.javafaker.option
+package io.github.detomarco.kotlinfixture.javafaker.option
 
 import com.github.javafaker.Internet
 

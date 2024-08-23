@@ -25,7 +25,7 @@ plugins {
 
 val kotlinVersion: String by project
 val kotlinxVersion: String by project
-val junit4Version: String by project
+val junitVersion: String by project
 val generexVersion: String by project
 
 dependencies {
@@ -33,9 +33,8 @@ dependencies {
     api(project(":fixture"))
     api("com.github.mifmif:generex:$generexVersion")
 
-    testImplementation("junit:junit:$junit4Version")
-    testImplementation(kotlin("test"))
-    testImplementation(kotlin("test-junit"))
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation(kotlin("test-junit5"))
 
     testImplementation(kotlin("reflect"))
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinxVersion")

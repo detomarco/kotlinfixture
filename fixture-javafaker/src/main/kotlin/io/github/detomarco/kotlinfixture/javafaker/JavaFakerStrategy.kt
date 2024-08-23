@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package io.github.detomarco.kotlinfixture.decorator.fake.javafaker
+package io.github.detomarco.kotlinfixture.javafaker
 
+import com.github.javafaker.Faker
 import io.github.detomarco.kotlinfixture.Context
 import io.github.detomarco.kotlinfixture.Unresolved
 import io.github.detomarco.kotlinfixture.decorator.fake.FakeStrategy
-import com.github.javafaker.Faker
 import kotlin.random.asJavaRandom
 
 internal class JavaFakerStrategy(
