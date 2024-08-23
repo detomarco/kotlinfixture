@@ -86,9 +86,13 @@ jobs:
       uses: gradle/actions/setup-gradle@v4
 
     - name: Publish package to local staging directory
+      env:
+        LIB_VERSION: 0.0.1
       run: ./gradlew clean publish
 
     - name: Validate configurations
+      env:
+        LIB_VERSION: 0.0.1
       run: ./gradlew jreleaserConfig
 
     - name: Publish package to maven central
