@@ -18,7 +18,7 @@ package io.github.detomarco.kotlinfixture.decorator.recursion
 
 import io.github.detomarco.kotlinfixture.Unresolved
 import io.github.detomarco.kotlinfixture.typeOf
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 

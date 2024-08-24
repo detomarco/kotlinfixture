@@ -18,7 +18,7 @@ package io.github.detomarco.kotlinfixture
 
 import io.github.detomarco.kotlinfixture.config.TestGenerator.fixture
 import kotlinx.serialization.Serializable
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 
 class SerializableTest {
 

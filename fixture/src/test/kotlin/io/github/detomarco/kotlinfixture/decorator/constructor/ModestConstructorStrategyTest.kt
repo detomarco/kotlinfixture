@@ -21,7 +21,7 @@ import io.github.detomarco.kotlinfixture.config.Configuration
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
 import kotlin.reflect.KClass
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class ModestConstructorStrategyTest {

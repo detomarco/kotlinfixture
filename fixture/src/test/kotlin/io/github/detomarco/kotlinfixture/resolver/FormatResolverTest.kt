@@ -30,7 +30,7 @@ import java.text.Format
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import kotlin.reflect.KClass
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 

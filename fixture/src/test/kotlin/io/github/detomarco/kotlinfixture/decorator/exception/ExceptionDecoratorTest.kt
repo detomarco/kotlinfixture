@@ -22,7 +22,7 @@ import io.github.detomarco.kotlinfixture.Unresolved
 import io.github.detomarco.kotlinfixture.config.ConfigurationBuilder
 import io.github.detomarco.kotlinfixture.resolver.Resolver
 import io.github.detomarco.kotlinfixture.typeOf
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertTrue
 
 class ExceptionDecoratorTest {

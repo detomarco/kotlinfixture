@@ -18,7 +18,7 @@ package io.github.detomarco.kotlinfixture
 
 import io.github.detomarco.kotlinfixture.decorator.nullability.NeverNullStrategy
 import io.github.detomarco.kotlinfixture.decorator.nullability.nullabilityStrategy
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 

@@ -20,7 +20,7 @@ import com.flextrade.kfixture.KFixture
 import com.marcellogalhardo.fixture.Fixture
 import org.jeasy.random.EasyRandom
 import kotlin.reflect.KClass
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 
 class ComparisonSingleTest {
 

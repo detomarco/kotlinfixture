@@ -20,7 +20,7 @@ import io.github.detomarco.kotlinfixture.TestContext
 import io.github.detomarco.kotlinfixture.config.ConfigurationBuilder
 import io.github.detomarco.kotlinfixture.resolver.CompositeResolver
 import io.github.detomarco.kotlinfixture.typeOf
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 

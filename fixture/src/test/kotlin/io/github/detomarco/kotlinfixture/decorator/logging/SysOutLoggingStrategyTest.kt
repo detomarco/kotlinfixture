@@ -17,7 +17,7 @@
 package io.github.detomarco.kotlinfixture.decorator.logging
 
 import java.util.UUID
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 

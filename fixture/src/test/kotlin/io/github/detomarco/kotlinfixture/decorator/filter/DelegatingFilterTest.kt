@@ -20,7 +20,7 @@ import io.github.detomarco.kotlinfixture.Context
 import io.github.detomarco.kotlinfixture.resolver.Resolver
 import org.mockito.kotlin.mock
 import java.util.concurrent.locks.Lock
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class DelegatingFilterTest {

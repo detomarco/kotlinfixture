@@ -19,7 +19,7 @@ package io.github.detomarco.kotlinfixture.decorator.optional
 import io.github.detomarco.kotlinfixture.TestContext
 import io.github.detomarco.kotlinfixture.config.ConfigurationBuilder
 import io.github.detomarco.kotlinfixture.resolver.TestResolver
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertTrue
 
 class AlwaysOptionalStrategyTest {

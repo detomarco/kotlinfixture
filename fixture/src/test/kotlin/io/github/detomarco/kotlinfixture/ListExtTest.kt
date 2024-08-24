@@ -16,7 +16,7 @@
 
 package io.github.detomarco.kotlinfixture
 
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import kotlin.test.assertFalse

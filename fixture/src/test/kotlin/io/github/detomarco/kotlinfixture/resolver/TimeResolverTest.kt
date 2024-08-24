@@ -45,7 +45,7 @@ import java.time.ZonedDateTime
 import java.util.Date
 import java.util.TimeZone
 import kotlin.reflect.KClass
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue

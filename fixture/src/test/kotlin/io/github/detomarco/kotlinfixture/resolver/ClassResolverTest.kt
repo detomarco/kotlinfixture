@@ -25,7 +25,7 @@ import io.github.detomarco.kotlinfixture.config.ConfigurationBuilder
 import io.github.detomarco.kotlinfixture.decorator.constructor.ConstructorStrategy
 import io.github.detomarco.kotlinfixture.decorator.constructor.GreedyConstructorStrategy
 import io.github.detomarco.kotlinfixture.decorator.constructor.ModestConstructorStrategy
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertNotNull

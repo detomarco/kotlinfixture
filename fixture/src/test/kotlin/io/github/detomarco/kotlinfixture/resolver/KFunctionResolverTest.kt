@@ -23,7 +23,7 @@ import io.github.detomarco.kotlinfixture.config.Configuration
 import io.github.detomarco.kotlinfixture.config.ConfigurationBuilder
 import kotlin.reflect.full.functions
 import kotlin.reflect.full.primaryConstructor
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertNotNull

@@ -24,7 +24,7 @@ import io.github.detomarco.kotlinfixture.config.before
 import java.util.Calendar
 import java.util.Date
 import java.util.GregorianCalendar
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 

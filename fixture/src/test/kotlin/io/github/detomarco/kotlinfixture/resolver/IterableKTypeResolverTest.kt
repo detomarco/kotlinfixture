@@ -54,7 +54,7 @@ import java.util.concurrent.TimeUnit
 import java.util.concurrent.TransferQueue
 import kotlin.reflect.KClass
 import kotlin.reflect.KType
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
