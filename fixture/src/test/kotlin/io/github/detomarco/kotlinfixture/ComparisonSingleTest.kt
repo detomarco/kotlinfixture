@@ -19,8 +19,8 @@ package io.github.detomarco.kotlinfixture
 import com.flextrade.kfixture.KFixture
 import com.marcellogalhardo.fixture.Fixture
 import org.jeasy.random.EasyRandom
-import kotlin.reflect.KClass
 import org.junit.jupiter.api.Test
+import kotlin.reflect.KClass
 
 class ComparisonSingleTest {
 

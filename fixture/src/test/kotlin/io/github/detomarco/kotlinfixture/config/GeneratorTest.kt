@@ -18,8 +18,8 @@ package io.github.detomarco.kotlinfixture.config
 
 import io.github.detomarco.kotlinfixture.Fixture
 import io.github.detomarco.kotlinfixture.assertIsRandom
-import kotlin.random.Random
 import org.junit.jupiter.api.Test
+import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 

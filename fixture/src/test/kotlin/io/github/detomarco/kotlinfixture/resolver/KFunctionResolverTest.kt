@@ -21,9 +21,9 @@ import io.github.detomarco.kotlinfixture.Unresolved
 import io.github.detomarco.kotlinfixture.assertIsRandom
 import io.github.detomarco.kotlinfixture.config.Configuration
 import io.github.detomarco.kotlinfixture.config.ConfigurationBuilder
+import org.junit.jupiter.api.Test
 import kotlin.reflect.full.functions
 import kotlin.reflect.full.primaryConstructor
-import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertNotNull

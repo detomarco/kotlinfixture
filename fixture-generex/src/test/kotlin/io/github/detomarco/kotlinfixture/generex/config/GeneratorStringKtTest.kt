@@ -77,7 +77,7 @@ class GeneratorStringKtTest {
         repeat(100) {
             val result = fixture<String>()
 
-                result.matches(regex).shouldBeTrue()
+            result.matches(regex).shouldBeTrue()
         }
     }
 

@@ -21,8 +21,8 @@ import io.github.detomarco.kotlinfixture.Unresolved
 import io.github.detomarco.kotlinfixture.assertIsRandom
 import io.github.detomarco.kotlinfixture.config.Configuration
 import io.github.detomarco.kotlinfixture.typeOf
-import java.util.EnumMap
 import org.junit.jupiter.api.Test
+import java.util.EnumMap
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 

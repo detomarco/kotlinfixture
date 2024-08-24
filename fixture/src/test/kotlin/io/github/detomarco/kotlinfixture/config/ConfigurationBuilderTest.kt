@@ -22,11 +22,11 @@ import io.github.detomarco.kotlinfixture.decorator.filter.Filter
 import io.github.detomarco.kotlinfixture.resolver.Resolver
 import io.github.detomarco.kotlinfixture.resolver.StringResolver
 import io.github.detomarco.kotlinfixture.typeOf
+import org.junit.jupiter.api.Test
 import kotlin.random.Random
 import kotlin.reflect.KClass
 import kotlin.reflect.KType
 import kotlin.reflect.full.starProjectedType
-import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import kotlin.test.assertNotEquals

@@ -18,10 +18,10 @@ package io.github.detomarco.kotlinfixture.config
 
 import io.github.detomarco.kotlinfixture.assertIsRandom
 import io.github.detomarco.kotlinfixture.kotlinFixture
+import org.junit.jupiter.api.Test
 import java.util.Date
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
-import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue

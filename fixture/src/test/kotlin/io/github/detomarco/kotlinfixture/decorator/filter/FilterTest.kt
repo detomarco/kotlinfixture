@@ -18,6 +18,7 @@ package io.github.detomarco.kotlinfixture.decorator.filter
 
 import io.github.detomarco.kotlinfixture.Context
 import io.github.detomarco.kotlinfixture.resolver.Resolver
+import org.junit.jupiter.api.Test
 import org.mockito.kotlin.any
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.inOrder
@@ -25,7 +26,6 @@ import org.mockito.kotlin.mock
 import org.mockito.kotlin.times
 import org.mockito.kotlin.verify
 import java.util.concurrent.locks.Lock
-import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class FilterTest {
