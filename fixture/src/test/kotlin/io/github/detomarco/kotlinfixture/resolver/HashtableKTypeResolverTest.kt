@@ -21,6 +21,8 @@ import io.github.detomarco.kotlinfixture.Unresolved
 import io.github.detomarco.kotlinfixture.assertIsRandom
 import io.github.detomarco.kotlinfixture.config.Configuration
 import io.github.detomarco.kotlinfixture.typeOf
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
@@ -30,8 +32,6 @@ import java.util.Dictionary
 import java.util.Hashtable
 import kotlin.reflect.KClass
 import kotlin.reflect.KType
-import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 
 class HashtableKTypeResolverTest {
 

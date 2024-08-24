@@ -18,20 +18,20 @@ package io.github.detomarco.kotlinfixture.decorator.recursion
 
 import io.github.detomarco.kotlinfixture.typeOf
 import org.junit.jupiter.api.Test
-import kotlin.test.assertFailsWith
+import org.junit.jupiter.api.assertThrows
 
 class ThrowingRecursionStrategyTest {
 
     @Test
     fun `throws illegal state exception when stack is empty`() {
-        assertFailsWith<IllegalStateException> {
+        assertThrows<IllegalStateException> {
             ThrowingRecursionStrategy.handleRecursion(typeOf<String>(), emptyList())
         }
     }
 
     @Test
     fun `throws expected exception when stack is populated`() {
-        assertFailsWith<UnsupportedOperationException> {
+        assertThrows<UnsupportedOperationException> {
             ThrowingRecursionStrategy.handleRecursion(typeOf<String>(), listOf(typeOf<Int>(), typeOf<Float>()))
         }
     }

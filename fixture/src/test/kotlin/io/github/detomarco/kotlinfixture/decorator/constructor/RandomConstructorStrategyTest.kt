@@ -20,8 +20,8 @@ import io.github.detomarco.kotlinfixture.TestContext
 import io.github.detomarco.kotlinfixture.assertIsRandom
 import io.github.detomarco.kotlinfixture.config.Configuration
 import io.github.detomarco.kotlinfixture.resolver.TestResolver
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 class RandomConstructorStrategyTest {
 

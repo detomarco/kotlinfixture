@@ -45,7 +45,6 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
-    testImplementation(kotlin("test-junit5"))
     testImplementation("org.mockito.kotlin:mockito-kotlin:${mockitoKotlinVersion}")
     testImplementation("io.mockk:mockk:$mockkVersion")
 
