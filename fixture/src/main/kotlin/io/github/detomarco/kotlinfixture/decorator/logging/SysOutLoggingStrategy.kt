@@ -20,8 +20,9 @@ import java.util.Stack
 import kotlin.reflect.KType
 
 /**
- * A [LoggingStrategy] that logs to [System.out]
+ * A [LoggingStrategy] that logs to [System.out].
  */
+@Suppress("ForbiddenMethodCall")
 object SysOutLoggingStrategy : LoggingStrategy {
     private val stack = Stack<Any>()
 

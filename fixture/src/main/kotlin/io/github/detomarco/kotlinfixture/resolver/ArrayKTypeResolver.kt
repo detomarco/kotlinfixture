@@ -45,7 +45,7 @@ internal class ArrayKTypeResolver : Resolver {
         if (obj is KType && obj.classifier?.starProjectedType == Array<Any?>::class.starProjectedType) {
             val size = context.configuration.repeatCount()
 
-            val type = obj.arguments[0].type!!
+            val type = requireNotNull(obj.arguments[0].type) {"First argument required"}
             val array: Any = java.lang.reflect.Array.newInstance((type.classifier as KClass<*>).java, size)
 
             for (i in 0 until size) {

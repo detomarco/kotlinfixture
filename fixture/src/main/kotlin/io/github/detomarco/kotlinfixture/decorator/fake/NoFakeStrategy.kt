@@ -20,7 +20,7 @@ import io.github.detomarco.kotlinfixture.Context
 import io.github.detomarco.kotlinfixture.Unresolved
 
 /**
- * A [FakeStrategy] that contains no fake data
+ * A [FakeStrategy] that contains no fake data.
  */
 object NoFakeStrategy : FakeStrategy {
     override fun fake(context: Context, propertyName: String) = Unresolved.Unhandled

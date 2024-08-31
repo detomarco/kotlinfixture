@@ -17,7 +17,7 @@
 package io.github.detomarco.kotlinfixture.decorator.logging
 
 /**
- * A [LoggingStrategy] that logs nothing
+ * A [LoggingStrategy] that logs nothing.
  */
 object NoLoggingStrategy : LoggingStrategy {
     override fun request(obj: Any) = Unit

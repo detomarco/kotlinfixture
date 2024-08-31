@@ -30,7 +30,6 @@ object ArrayFavouringConstructorStrategy : ConstructorStrategy {
     @OptIn(ExperimentalUnsignedTypes::class)
     private val arrayTypes = listOf(
         Array<Any>::class,
-
         BooleanArray::class,
         ByteArray::class,
         DoubleArray::class,

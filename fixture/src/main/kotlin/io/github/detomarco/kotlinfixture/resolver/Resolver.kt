@@ -24,7 +24,7 @@ import io.github.detomarco.kotlinfixture.Unresolved
  */
 interface Resolver {
     /**
-     * Ask the [Resolver] if it handles the current [obj] and return either a generated fixture or [Unresolved]
+     * Ask the [Resolver] if it handles the current [obj] and return either a generated fixture or [Unresolved].
      */
     fun resolve(context: Context, obj: Any): Any?
 }

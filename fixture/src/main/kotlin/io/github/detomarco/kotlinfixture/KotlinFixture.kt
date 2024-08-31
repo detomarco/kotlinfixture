@@ -90,13 +90,12 @@ class Fixture @JvmOverloads constructor(val fixtureConfiguration: Configuration 
     /**
      * Generate a new [Fixture] with overridden configuration.
      */
-    fun new(configuration: ConfigurationBuilder.() -> Unit = {}): Fixture {
-        return Fixture(ConfigurationBuilder(fixtureConfiguration).apply(configuration).build())
-    }
+    fun new(configuration: ConfigurationBuilder.() -> Unit = {}): Fixture =
+        Fixture(ConfigurationBuilder(fixtureConfiguration).apply(configuration).build())
 }
 
 /**
- * Create a [Fixture] with [configuration]
+ * Create a [Fixture] with [configuration].
  */
 fun kotlinFixture(configuration: ConfigurationBuilder.() -> Unit = {}) =
     Fixture(ConfigurationBuilder().apply(configuration).build())

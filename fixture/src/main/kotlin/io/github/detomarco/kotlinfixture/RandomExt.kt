@@ -23,11 +23,11 @@ import kotlin.random.Random
 
 @Suppress("MagicNumber")
 internal fun Random.nextUuid(): UUID {
-    val mostSigBits = ByteArray(8).let(::nextBytes).apply {
+    val mostSigBits = nextBytes(ByteArray(8)).apply {
         this[6] = 0x40.toByte() or (this[6] and 0x0f.toByte())
     }.toLong()
 
-    val leastSigBits = ByteArray(8).let(::nextBytes).apply {
+    val leastSigBits = nextBytes(ByteArray(8)).apply {
         this[0] = 0x80.toByte() or (this[0] and 0x3f.toByte())
     }.toLong()
 

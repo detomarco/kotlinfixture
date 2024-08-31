@@ -51,8 +51,8 @@ internal class MapKTypeResolver : Resolver {
 
     @Suppress("ReturnCount")
     private fun Context.populateCollection(obj: KType, collection: MutableMap<Any?, Any?>): Any {
-        val keyType = obj.arguments[0].type!!
-        val valueType = obj.arguments[1].type!!
+        val keyType = requireNotNull(obj.arguments[0].type) {"First argument required"}
+        val valueType = requireNotNull(obj.arguments[1].type) {"Second argument required"}
 
         repeat(configuration.repeatCount()) {
             val key = resolve(keyType)
@@ -90,8 +90,7 @@ internal class MapKTypeResolver : Resolver {
         IdentityHashMap::class -> IdentityHashMap()
         WeakHashMap::class -> WeakHashMap()
 
-        else -> {
-            null
-        }
+        else -> null
+
     }
 }

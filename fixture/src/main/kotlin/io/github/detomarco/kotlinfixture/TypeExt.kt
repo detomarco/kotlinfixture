@@ -20,7 +20,7 @@ import kotlin.reflect.KType
 import kotlin.reflect.typeOf
 
 /**
- * Return the [KType] for the reified type
+ * Return the [KType] for the reified type.
  * @suppress
  */
 @Suppress("EXPERIMENTAL_API_USAGE_ERROR")

@@ -23,7 +23,7 @@ import io.github.detomarco.kotlinfixture.Context
  */
 interface NullabilityStrategy {
     /**
-     * True means resolve as null
+     * True means resolve as null.
      */
     fun Context.generateAsNull(): Boolean
 }

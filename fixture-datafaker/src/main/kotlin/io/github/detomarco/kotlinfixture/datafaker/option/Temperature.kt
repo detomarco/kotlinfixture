@@ -17,7 +17,7 @@
 package io.github.detomarco.kotlinfixture.datafaker.option
 
 /**
- * Different types of [Temperature]
+ * Different types of [Temperature].
  */
 enum class Temperature {
     Celsius,

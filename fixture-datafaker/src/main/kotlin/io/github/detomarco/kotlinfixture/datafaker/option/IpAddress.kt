@@ -17,7 +17,7 @@
 package io.github.detomarco.kotlinfixture.datafaker.option
 
 /**
- * Different types of [IpAddress]
+ * Different types of [IpAddress].
  */
 enum class IpAddress {
     V4,

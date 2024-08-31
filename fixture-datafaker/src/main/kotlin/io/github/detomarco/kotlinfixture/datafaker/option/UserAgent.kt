@@ -19,7 +19,7 @@ package io.github.detomarco.kotlinfixture.datafaker.option
 import net.datafaker.providers.base.Internet
 
 /**
- * Different types of [UserAgent]
+ * Different types of [UserAgent].
  */
 @Suppress("unused")
 enum class UserAgent(internal val userAgent: Internet.UserAgent?) {

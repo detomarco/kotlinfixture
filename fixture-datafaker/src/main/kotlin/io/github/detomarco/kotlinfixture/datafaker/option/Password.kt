@@ -17,7 +17,7 @@
 package io.github.detomarco.kotlinfixture.datafaker.option
 
 /**
- * Configuration for password generation
+ * Configuration for password generation.
  */
 data class Password(
     val minimumLength: Int = 8,

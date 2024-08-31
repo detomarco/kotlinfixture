@@ -67,7 +67,7 @@ internal class IterableKTypeResolver : Resolver {
     }
 
     private fun Context.populateCollection(obj: KType, collection: MutableCollection<Any?>): Any {
-        val argType = obj.arguments.first().type!!
+        val argType = requireNotNull(obj.arguments[0].type) {"First argument required"}
 
         repeat(configuration.repeatCount()) {
             val value = resolve(argType)

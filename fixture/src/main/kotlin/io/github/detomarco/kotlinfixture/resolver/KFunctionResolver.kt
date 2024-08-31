@@ -42,7 +42,7 @@ internal class KFunctionResolver : Resolver {
                     KParameter.Kind.INSTANCE -> {
                         obj.containingClass.companionObjectInstance
                     }
-                    else -> {
+                    KParameter.Kind.EXTENSION_RECEIVER -> {
                         error("Unsupported parameter type: $it")
                     }
                 }
@@ -52,7 +52,7 @@ internal class KFunctionResolver : Resolver {
                         // Keep if the parameter has an override, is mandatory, or if optional using the strategy
                         overrides.containsKey(it.name) || !it.isOptional || !generateAsOptional(
                             obj.containingClass,
-                            it.name!!
+                            requireNotNull(it.name)
                         )
                     }
                 }

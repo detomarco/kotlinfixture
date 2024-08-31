@@ -34,7 +34,7 @@ class OptionalStrategyBuilder internal constructor(private val defaultStrategy: 
     private val properties: MutableMap<KClass<*>, MutableMap<String, OptionalStrategy>> = mutableMapOf()
 
     /**
-     * Override the strategy for a particular class
+     * Override the strategy for a particular class.
      */
     @Suppress("DEPRECATION_ERROR")
     inline fun <reified T> classOverride(strategy: OptionalStrategy) = classOverride(T::class, strategy)
@@ -45,14 +45,14 @@ class OptionalStrategyBuilder internal constructor(private val defaultStrategy: 
     }
 
     /**
-     * Override the strategy for a property of a class
+     * Override the strategy for a property of a class.
      */
     @Suppress("DEPRECATION_ERROR")
     inline fun <reified T> propertyOverride(propertyName: String, strategy: OptionalStrategy) =
         propertyOverride(T::class, propertyName, strategy)
 
     /**
-     * Override the strategy for a property of a class
+     * Override the strategy for a property of a class.
      */
     inline fun <reified T> propertyOverride(property: KProperty1<T, *>, strategy: OptionalStrategy) {
         // Only allow read only properties in constructor(s)

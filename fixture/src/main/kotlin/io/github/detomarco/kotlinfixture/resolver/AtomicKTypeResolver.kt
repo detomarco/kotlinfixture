@@ -70,7 +70,7 @@ internal class AtomicKTypeResolver : Resolver {
     }
 
     private fun Context.generateAtomicReference(obj: KType) = wrapNullability(obj) {
-        val reference = resolve(obj.arguments.first().type!!)
+        val reference = resolve(requireNotNull(obj.arguments.first().type))
         if (reference is Unresolved) {
             createUnresolved("Unable to resolve ${obj.arguments.first().type}", listOf(reference))
         } else {

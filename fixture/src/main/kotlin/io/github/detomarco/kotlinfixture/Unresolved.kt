@@ -26,17 +26,17 @@ import java.io.Writer
  */
 sealed class Unresolved {
     /**
-     * Use [Unhandled] when a resolver does not handle a particular type
+     * Use [Unhandled] when a resolver does not handle a particular type.
      */
     object Unhandled : Unresolved()
 
     /**
-     * Use [NotSupported] when a resolver handles a particular type but is unable to
+     * Use [NotSupported] when a resolver handles a particular type but is unable to.
      */
     class NotSupported(val message: String, val causes: List<Unresolved> = emptyList()) : Unresolved()
 
     /**
-     * Use [WithException] when a resolver handles a particular type but is unable to due to a caught exception
+     * Use [WithException] when a resolver handles a particular type but is unable to due to a caught exception.
      */
     class WithException(val message: String, val exception: Exception) : Unresolved()
 
@@ -55,6 +55,7 @@ sealed class Unresolved {
                 writer.write("${"    ".repeat(depth)}$message\n")
                 causes.forEach { it.stackTrace(writer, depth + 1) }
             }
+
             is WithException -> {
                 writer.write("${"    ".repeat(depth)}$message\n")
 
@@ -69,7 +70,10 @@ sealed class Unresolved {
                 writer.write(stackTrace.prependIndent("    ".repeat(depth + 1)))
                 writer.write("\n")
             }
-            Unhandled -> Unit
+
+            Unhandled -> {
+                Unit
+            }
         }
     }
 

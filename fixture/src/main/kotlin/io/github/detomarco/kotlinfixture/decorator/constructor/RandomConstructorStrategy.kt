@@ -24,7 +24,6 @@ import kotlin.reflect.KFunction
  * Order constructors at random.
  */
 object RandomConstructorStrategy : ConstructorStrategy {
-    override fun constructors(context: Context, obj: KClass<*>): Collection<KFunction<*>> {
-        return obj.filteredConstructors.shuffled(context.random)
-    }
+    override fun constructors(context: Context, obj: KClass<*>): Collection<KFunction<*>> =
+        obj.filteredConstructors.shuffled(context.random)
 }

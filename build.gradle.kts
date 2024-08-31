@@ -15,6 +15,7 @@
  */
 
 import com.adarshr.gradle.testlogger.theme.ThemeType
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jreleaser.model.Active
 
@@ -61,14 +62,15 @@ subprojects {
         testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
     }
 
-    tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
     }
 
     detekt {
-        allRules = true
-        buildUponDefaultConfig = true
         autoCorrect = System.getProperty("autoCorrect") == "true"
+        config.setFrom("${project.rootDir}/.detekt/config.yml")
     }
 
     tasks.withType<Test> {

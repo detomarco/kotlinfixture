@@ -39,8 +39,8 @@ internal class TupleKTypeResolver : Resolver {
     }
 
     private fun generatePair(context: Context, obj: KType): Any? = context.wrapNullability(obj) {
-        val firstType = obj.arguments[0].type!!
-        val secondType = obj.arguments[1].type!!
+        val firstType = requireNotNull(obj.arguments[0].type) {"First argument required"}
+        val secondType = requireNotNull(obj.arguments[1].type) {"Second argument required"}
 
         val first = resolve(firstType)
         val second = resolve(secondType)
@@ -54,9 +54,9 @@ internal class TupleKTypeResolver : Resolver {
     }
 
     private fun generateTriple(context: Context, obj: KType): Any? = context.wrapNullability(obj) {
-        val firstType = obj.arguments[0].type!!
-        val secondType = obj.arguments[1].type!!
-        val thirdType = obj.arguments[2].type!!
+        val firstType =requireNotNull(obj.arguments[0].type) {"First argument required"}
+        val secondType = requireNotNull(obj.arguments[1].type) {"Second argument required"}
+        val thirdType =requireNotNull(obj.arguments[2].type) {"Third argument required"}
 
         val first = resolve(firstType)
         val second = resolve(secondType)

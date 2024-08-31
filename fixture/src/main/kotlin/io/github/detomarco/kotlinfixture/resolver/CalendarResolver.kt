@@ -28,11 +28,10 @@ internal class CalendarResolver : Resolver {
     override fun resolve(context: Context, obj: Any): Any {
         return when (obj) {
             Calendar::class,
-            GregorianCalendar::class -> {
+            GregorianCalendar::class ->
                 GregorianCalendar().apply {
                     time = context.resolve(typeOf<Date>()) as Date
                 }
-            }
             else -> Unresolved.Unhandled
         }
     }

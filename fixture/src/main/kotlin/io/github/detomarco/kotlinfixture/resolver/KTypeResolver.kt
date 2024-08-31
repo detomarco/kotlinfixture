@@ -27,7 +27,7 @@ internal class KTypeResolver : Resolver {
     override fun resolve(context: Context, obj: Any): Any? {
         return if (obj is KType && obj.classifier is KClass<*>) {
             context.wrapNullability(obj) {
-                resolve(obj.classifier!!)
+                resolve(requireNotNull(obj.classifier))
             }
         } else {
             Unresolved.Unhandled
