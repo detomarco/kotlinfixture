@@ -134,7 +134,6 @@ class TimeResolverTest {
             Arguments.of(Month::class),
             Arguments.of(YearMonth::class),
             Arguments.of(MonthDay::class)
-
         )
     }
 }

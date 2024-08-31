@@ -32,6 +32,9 @@ class OptionalConfigurationTest {
 
     data class DataClass(val optionalValue: String = "hello", val unmatchedValue: String = "goodbye")
 
+    private val Fixture.optionalStrategy: OptionalStrategy
+        get() = fixtureConfiguration.strategies[OptionalStrategy::class] as OptionalStrategy
+
     @Test
     fun `Default strategy NeverOptionalStrategy returns false`(): Unit = with(testContext) {
         kotlinFixture {
@@ -157,7 +160,4 @@ class OptionalConfigurationTest {
             }
         }
     }
-
-    private val Fixture.optionalStrategy: OptionalStrategy
-        get() = fixtureConfiguration.strategies[OptionalStrategy::class] as OptionalStrategy
 }

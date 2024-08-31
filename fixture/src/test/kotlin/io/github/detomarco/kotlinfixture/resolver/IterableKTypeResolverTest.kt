@@ -161,7 +161,6 @@ class IterableKTypeResolverTest {
             Arguments.of(typeOf<Iterable<String>>(), Iterable::class),
             Arguments.of(typeOf<Collection<String>>(), Collection::class),
             Arguments.of(typeOf<java.util.AbstractCollection<String>>(), java.util.AbstractCollection::class),
-
             // Set
             Arguments.of(typeOf<Set<String>>(), Set::class),
             Arguments.of(typeOf<java.util.AbstractSet<String>>(), java.util.AbstractSet::class),
@@ -172,7 +171,6 @@ class IterableKTypeResolverTest {
             Arguments.of(typeOf<TreeSet<String>>(), TreeSet::class),
             Arguments.of(typeOf<ConcurrentSkipListSet<String>>(), ConcurrentSkipListSet::class),
             Arguments.of(typeOf<CopyOnWriteArraySet<String>>(), CopyOnWriteArraySet::class),
-
             // List
             Arguments.of(typeOf<List<String>>(), List::class),
             Arguments.of(typeOf<MutableList<String>>(), MutableList::class),
@@ -183,7 +181,6 @@ class IterableKTypeResolverTest {
             Arguments.of(typeOf<Vector<String>>(), Vector::class),
             Arguments.of(typeOf<Stack<String>>(), Stack::class),
             Arguments.of(typeOf<CopyOnWriteArrayList<String>>(), CopyOnWriteArrayList::class),
-
             // Queue
             Arguments.of(typeOf<Queue<String>>(), Queue::class),
             Arguments.of(typeOf<AbstractQueue<String>>(), AbstractQueue::class),
@@ -195,7 +192,6 @@ class IterableKTypeResolverTest {
             Arguments.of(typeOf<LinkedTransferQueue<String>>(), LinkedTransferQueue::class),
             Arguments.of(typeOf<BlockingQueue<String>>(), BlockingQueue::class),
             Arguments.of(typeOf<TransferQueue<String>>(), TransferQueue::class),
-
             // Deque
             Arguments.of(typeOf<Deque<String>>(), Deque::class),
             Arguments.of(typeOf<ArrayDeque<String>>(), ArrayDeque::class),

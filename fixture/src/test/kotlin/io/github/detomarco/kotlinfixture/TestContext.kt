@@ -20,6 +20,7 @@ import io.github.detomarco.kotlinfixture.config.Configuration
 import io.github.detomarco.kotlinfixture.resolver.Resolver
 import kotlin.random.Random
 
+@Suppress("DataClassContainsFunctions")
 data class TestContext(override val configuration: Configuration, override val resolver: Resolver) : Context {
     fun seedRandom() = this.copy(configuration = configuration.copy(random = Random(0)))
 }

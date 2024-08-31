@@ -62,7 +62,7 @@ class DefaultFilterTest {
     fun `chained filter uses supplied resolver`() {
         whenever(mockResolver.resolve(mockContext, mockObj)).thenReturn(1, 2, 3, 4, 5)
 
-        val newFilter = filter.map { filter { (it as Int) % 2 == 0 } }
+        val newFilter = filter.map { filter { it as Int % 2 == 0 } }
 
         val result = newFilter.next(mockResolver, mockContext)
 
@@ -73,7 +73,7 @@ class DefaultFilterTest {
     fun `original filter iterator is used by chained filter but not filtered by it`() {
         whenever(mockResolver.resolve(mockContext, mockObj)).thenReturn(1, 2, 3, 4, 5)
 
-        filter.map { filter { (it as Int) % 2 == 0 } }.next(mockResolver, mockContext)
+        filter.map { filter { it as Int % 2 == 0 } }.next(mockResolver, mockContext)
 
         val result = filter.next(mockResolver, mockContext)
         assertEquals(3, result)
@@ -83,7 +83,7 @@ class DefaultFilterTest {
     fun `twice chained filter is filtered as expected`() {
         whenever(mockResolver.resolve(mockContext, mockObj)).thenReturn(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
-        val newFilter = filter.map { filter { (it as Int) % 2 == 0 } }.map { filter { (it as Int) % 3 == 0 } }
+        val newFilter = filter.map { filter { it as Int % 2 == 0 } }.map { filter { it as Int % 3 == 0 } }
 
         val result = newFilter.next(mockResolver, mockContext)
 

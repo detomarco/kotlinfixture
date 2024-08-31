@@ -64,7 +64,7 @@ class FormatResolverTest {
     @MethodSource("data")
     fun `Random values returned`(clazz: KClass<*>) {
         assertIsRandom {
-            (context.resolve(clazz) as Format)
+            context.resolve(clazz) as Format
         }
     }
 

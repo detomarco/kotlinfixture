@@ -124,7 +124,7 @@ class MapKTypeResolverTest {
     @MethodSource("data")
     fun `Random values returned`(type: KType) {
         assertIsRandom {
-            (context.resolve(type) as MutableMap<*, *>)
+            context.resolve(type) as MutableMap<*, *>
         }
     }
 

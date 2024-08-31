@@ -52,6 +52,7 @@ class FilterTest {
     }
 
     @Test
+    @Suppress("ForbiddenMethodCall")
     fun `next locks and sets resolver and context before calling the iterator and unlocking`() {
         mockFilter.next(mock(), mock())
 
@@ -69,7 +70,7 @@ class FilterTest {
 
     @Test
     fun `mapping creates new filter with filtering applied to the iterator`() {
-        val newFilter = mockFilter.map { filter { (it as Int) % 2 == 0 } }
+        val newFilter = mockFilter.map { filter { it as Int % 2 == 0 } }
 
         assertEquals(2, newFilter.iterator.next())
         assertEquals(4, newFilter.iterator.next())
@@ -77,7 +78,7 @@ class FilterTest {
 
     @Test
     fun `mapping moves the original iterator`() {
-        val newFilter = mockFilter.map { filter { (it as Int) % 2 == 0 } }
+        val newFilter = mockFilter.map { filter { it as Int % 2 == 0 } }
 
         newFilter.iterator.next()
 

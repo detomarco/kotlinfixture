@@ -76,7 +76,7 @@ class DelegatingFilterTest {
 
     @Test
     fun `filter applies to the iterator`() {
-        val filter = DelegatingFilter(delegateFilter) { filter { (it as Int) > 2 } }
+        val filter = DelegatingFilter(delegateFilter) { filter { it as Int > 2 } }
 
         assertEquals(3, filter.iterator.next())
     }
@@ -84,9 +84,9 @@ class DelegatingFilterTest {
     @Test
     fun `chaining applies all filters to the iterator`() {
         val filter = DelegatingFilter(
-            DelegatingFilter(delegateFilter) { filter { (it as Int) > 2 } }
+            DelegatingFilter(delegateFilter) { filter { it as Int > 2 } }
         ) {
-            filter { (it as Int) % 2 == 0 }
+            filter { it as Int % 2 == 0 }
         }
 
         assertEquals(4, filter.iterator.next())

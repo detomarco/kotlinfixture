@@ -68,7 +68,7 @@ class ConfigurationBuilderTest {
         with(TestGenerator) {
             assertEquals(
                 1,
-                (configuration.properties.getValue(Properties::class).getValue("property"))()
+                configuration.properties.getValue(Properties::class).getValue("property")()
             )
         }
     }
@@ -88,7 +88,7 @@ class ConfigurationBuilderTest {
         with(TestGenerator) {
             assertEquals(
                 1,
-                (configuration.properties.getValue(Properties::class).getValue("property"))()
+                configuration.properties.getValue(Properties::class).getValue("property")()
             )
         }
     }
@@ -107,7 +107,7 @@ class ConfigurationBuilderTest {
         with(TestGenerator) {
             assertEquals(
                 "1",
-                (configuration.properties.getValue(Properties::class).getValue("property"))()
+                configuration.properties.getValue(Properties::class).getValue("property")()
             )
         }
     }
@@ -139,7 +139,7 @@ class ConfigurationBuilderTest {
         with(TestGenerator) {
             assertEquals(
                 Properties("1"),
-                (configuration.factories.getValue(Properties::class.starProjectedType))()
+                configuration.factories.getValue(Properties::class.starProjectedType)()
             )
         }
     }
@@ -161,7 +161,7 @@ class ConfigurationBuilderTest {
         with(TestGenerator) {
             assertEquals(
                 Properties("1"),
-                (configuration.factories.getValue(Properties::class.starProjectedType))()
+                configuration.factories.getValue(Properties::class.starProjectedType)()
             )
         }
     }

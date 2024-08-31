@@ -83,7 +83,6 @@ class PrimitiveResolverTest {
             Arguments.of(Int::class),
             Arguments.of(Long::class),
             Arguments.of(Short::class),
-
             Arguments.of(UByte::class),
             Arguments.of(UInt::class),
             Arguments.of(ULong::class),

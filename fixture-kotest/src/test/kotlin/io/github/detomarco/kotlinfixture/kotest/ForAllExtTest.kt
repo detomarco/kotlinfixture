@@ -71,180 +71,150 @@ class ForAllExtTest {
         @JvmStatic
         @Suppress("LongMethod")
         fun data(): Array<TestCase> = arrayOf(
-
             // 1 parameter
-
             TestCase(PropertyTesting.defaultIterationCount) { save, returnValue ->
                 forAll<Person> { p1 ->
                     save(listOf(p1))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS) { save, returnValue ->
                 forAll<Person>(ITERATIONS) { p1 ->
                     save(listOf(p1))
                     returnValue()
                 }
             },
-
             TestCase(PropertyTesting.defaultIterationCount) { save, returnValue ->
                 forAll<Person>(PropTestConfig()) { p1 ->
                     save(listOf(p1))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS) { save, returnValue ->
                 forAll<Person>(ITERATIONS, PropTestConfig()) { p1 ->
                     save(listOf(p1))
                     returnValue()
                 }
             },
-
             // 2 parameters
-
             TestCase(PropertyTesting.defaultIterationCount * 2) { save, returnValue ->
                 forAll<Person, Person> { p1, p2 ->
                     save(listOf(p1, p2))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 2) { save, returnValue ->
                 forAll<Person, Person>(ITERATIONS) { p1, p2 ->
                     save(listOf(p1, p2))
                     returnValue()
                 }
             },
-
             TestCase(PropertyTesting.defaultIterationCount * 2) { save, returnValue ->
                 forAll<Person, Person>(PropTestConfig()) { p1, p2 ->
                     save(listOf(p1, p2))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 2) { save, returnValue ->
                 forAll<Person, Person>(ITERATIONS, PropTestConfig()) { p1, p2 ->
                     save(listOf(p1, p2))
                     returnValue()
                 }
             },
-
             // 3 parameters
-
             TestCase(PropertyTesting.defaultIterationCount * 3) { save, returnValue ->
                 forAll<Person, Person, Person> { p1, p2, p3 ->
                     save(listOf(p1, p2, p3))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 3) { save, returnValue ->
                 forAll<Person, Person, Person>(ITERATIONS) { p1, p2, p3 ->
                     save(listOf(p1, p2, p3))
                     returnValue()
                 }
             },
-
             TestCase(PropertyTesting.defaultIterationCount * 3) { save, returnValue ->
                 forAll<Person, Person, Person>(PropTestConfig()) { p1, p2, p3 ->
                     save(listOf(p1, p2, p3))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 3) { save, returnValue ->
                 forAll<Person, Person, Person>(ITERATIONS, PropTestConfig()) { p1, p2, p3 ->
                     save(listOf(p1, p2, p3))
                     returnValue()
                 }
             },
-
             // 4 parameters
-
             TestCase(PropertyTesting.defaultIterationCount * 4) { save, returnValue ->
                 forAll<Person, Person, Person, Person> { p1, p2, p3, p4 ->
                     save(listOf(p1, p2, p3, p4))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 4) { save, returnValue ->
                 forAll<Person, Person, Person, Person>(ITERATIONS) { p1, p2, p3, p4 ->
                     save(listOf(p1, p2, p3, p4))
                     returnValue()
                 }
             },
-
             TestCase(PropertyTesting.defaultIterationCount * 4) { save, returnValue ->
                 forAll<Person, Person, Person, Person>(PropTestConfig()) { p1, p2, p3, p4 ->
                     save(listOf(p1, p2, p3, p4))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 4) { save, returnValue ->
                 forAll<Person, Person, Person, Person>(ITERATIONS, PropTestConfig()) { p1, p2, p3, p4 ->
                     save(listOf(p1, p2, p3, p4))
                     returnValue()
                 }
             },
-
             // 5 parameters
-
             TestCase(PropertyTesting.defaultIterationCount * 5) { save, returnValue ->
                 forAll<Person, Person, Person, Person, Person> { p1, p2, p3, p4, p5 ->
                     save(listOf(p1, p2, p3, p4, p5))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 5) { save, returnValue ->
                 forAll<Person, Person, Person, Person, Person>(ITERATIONS) { p1, p2, p3, p4, p5 ->
                     save(listOf(p1, p2, p3, p4, p5))
                     returnValue()
                 }
             },
-
             TestCase(PropertyTesting.defaultIterationCount * 5) { save, returnValue ->
                 forAll<Person, Person, Person, Person, Person>(PropTestConfig()) { p1, p2, p3, p4, p5 ->
                     save(listOf(p1, p2, p3, p4, p5))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 5) { save, returnValue ->
                 forAll<Person, Person, Person, Person, Person>(ITERATIONS, PropTestConfig()) { p1, p2, p3, p4, p5 ->
                     save(listOf(p1, p2, p3, p4, p5))
                     returnValue()
                 }
             },
-
             // 6 parameters
-
             TestCase(PropertyTesting.defaultIterationCount * 6) { save, returnValue ->
                 forAll<Person, Person, Person, Person, Person, Person> { p1, p2, p3, p4, p5, p6 ->
                     save(listOf(p1, p2, p3, p4, p5, p6))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 6) { save, returnValue ->
                 forAll<Person, Person, Person, Person, Person, Person>(ITERATIONS) { p1, p2, p3, p4, p5, p6 ->
                     save(listOf(p1, p2, p3, p4, p5, p6))
                     returnValue()
                 }
             },
-
             TestCase(PropertyTesting.defaultIterationCount * 6) { save, returnValue ->
                 forAll<Person, Person, Person, Person, Person, Person>(PropTestConfig()) { p1, p2, p3, p4, p5, p6 ->
                     save(listOf(p1, p2, p3, p4, p5, p6))
                     returnValue()
                 }
             },
-
             TestCase(ITERATIONS * 6) { save, returnValue ->
                 forAll<Person, Person, Person, Person, Person, Person>(
                     ITERATIONS,

@@ -28,6 +28,7 @@ class SerializableTest {
     )
 
     @Test
+    @Suppress("UnnecessaryNotNullCheck")
     fun `serializing and deserializing ErrorCodeDto should result in original instance`() {
         repeat(100) {
             val original = fixture<ErrorCodeDto>()

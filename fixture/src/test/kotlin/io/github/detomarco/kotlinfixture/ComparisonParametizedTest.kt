@@ -405,7 +405,6 @@ class ComparisonParametizedTest {
         fun data() = arrayOf(
             // Boolean
             Arguments.of(typeOf<Boolean>(), VALID, VALID, VALID, VALID),
-
             // Primitives and numbers
             Arguments.of(typeOf<Byte>(), VALID, VALID, UNSUPPORTED, VALID),
             Arguments.of(typeOf<Double>(), VALID, VALID, VALID, VALID),
@@ -417,16 +416,12 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<UInt>(), VALID, VALID, VALID, VALID),
             Arguments.of(typeOf<ULong>(), VALID, VALID, VALID, VALID),
             Arguments.of(typeOf<UShort>(), VALID, VALID, UNSUPPORTED, VALID),
-
             // String
             Arguments.of(typeOf<String>(), VALID, VALID, VALID, VALID),
-
             // UUID
             Arguments.of(typeOf<UUID>(), VALID, VALID, VALID, VALID),
-
             // Character
             Arguments.of(typeOf<Char>(), VALID, VALID, VALID, VALID),
-
             // Date
             Arguments.of(typeOf<Date>(), VALID, VALID, VALID, VALID),
             Arguments.of(typeOf<Calendar>(), VALID, VALID, UNSUPPORTED, VALID),
@@ -434,7 +429,6 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<java.sql.Date>(), VALID, UNSUPPORTED, VALID, VALID),
             Arguments.of(typeOf<java.sql.Time>(), VALID, UNSUPPORTED, VALID, VALID),
             Arguments.of(typeOf<java.sql.Timestamp>(), VALID, VALID, VALID, VALID),
-
             Arguments.of(typeOf<Instant>(), VALID, VALID, UNSUPPORTED, VALID),
             Arguments.of(typeOf<ZonedDateTime>(), VALID, VALID, UNSUPPORTED, VALID),
             Arguments.of(typeOf<LocalDate>(), VALID, NOT_RANDOM, UNSUPPORTED, VALID),
@@ -451,7 +445,6 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<Month>(), VALID, VALID, UNSUPPORTED, VALID),
             Arguments.of(typeOf<YearMonth>(), VALID, NOT_RANDOM, UNSUPPORTED, VALID),
             Arguments.of(typeOf<MonthDay>(), VALID, NOT_RANDOM, UNSUPPORTED, VALID),
-
             Arguments.of(typeOf<org.joda.time.Instant>(), VALID, VALID, VALID, VALID),
             Arguments.of(typeOf<org.joda.time.LocalDate>(), VALID, NOT_RANDOM, NOT_RANDOM, NOT_RANDOM),
             Arguments.of(typeOf<org.joda.time.LocalTime>(), VALID, VALID, VALID, VALID),
@@ -461,11 +454,9 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<org.joda.time.Period>(), VALID, NOT_RANDOM, NOT_RANDOM, NOT_RANDOM),
             Arguments.of(typeOf<org.joda.time.DateTimeZone>(), VALID, UNSUPPORTED, UNSUPPORTED, UNSUPPORTED),
             Arguments.of(typeOf<org.joda.time.Interval>(), VALID, UNSUPPORTED, UNSUPPORTED, UNSUPPORTED),
-
             // Tuples
             Arguments.of(typeOf<Pair<String, String>>(), VALID, UNSUPPORTED, VALID, UNSUPPORTED),
             Arguments.of(typeOf<Triple<String, String, String>>(), VALID, UNSUPPORTED, VALID, UNSUPPORTED),
-
             // Array
             Arguments.of(typeOf<ByteArray>(), VALID, VALID, UNSUPPORTED, VALID),
             Arguments.of(typeOf<CharArray>(), VALID, VALID, UNSUPPORTED, VALID),
@@ -491,12 +482,10 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<Array<UInt>>(), VALID, VALID, UNSUPPORTED, VALID),
             Arguments.of(typeOf<Array<ULong>>(), VALID, VALID, UNSUPPORTED, VALID),
             Arguments.of(typeOf<Array<UShort>>(), VALID, VALID, UNSUPPORTED, VALID),
-
             // Iterable, List
             Arguments.of(typeOf<Iterable<String>>(), VALID, NOT_RANDOM, VALID, UNSUPPORTED),
             Arguments.of(typeOf<Collection<String>>(), VALID, NOT_RANDOM, VALID, NOT_RANDOM),
             Arguments.of(typeOf<AbstractCollection<String>>(), VALID, UNSUPPORTED, UNSUPPORTED, NOT_RANDOM),
-
             // Set
             Arguments.of(typeOf<Set<String>>(), VALID, NOT_RANDOM, VALID, NOT_RANDOM),
             Arguments.of(typeOf<AbstractSet<String>>(), VALID, UNSUPPORTED, UNSUPPORTED, NOT_RANDOM),
@@ -507,7 +496,6 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<TreeSet<String>>(), VALID, NOT_RANDOM, NOT_RANDOM, NOT_RANDOM),
             Arguments.of(typeOf<ConcurrentSkipListSet<String>>(), VALID, NOT_RANDOM, NOT_RANDOM, INVALID),
             Arguments.of(typeOf<CopyOnWriteArraySet<String>>(), VALID, NOT_RANDOM, NOT_RANDOM, INVALID),
-
             // List
             Arguments.of(typeOf<List<String>>(), VALID, NOT_RANDOM, VALID, NOT_RANDOM),
             Arguments.of(typeOf<MutableList<String>>(), VALID, NOT_RANDOM, VALID, NOT_RANDOM),
@@ -518,7 +506,6 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<Vector<String>>(), VALID, NOT_RANDOM, NOT_RANDOM, INVALID),
             Arguments.of(typeOf<Stack<String>>(), VALID, NOT_RANDOM, NOT_RANDOM, INVALID),
             Arguments.of(typeOf<CopyOnWriteArrayList<String>>(), VALID, NOT_RANDOM, NOT_RANDOM, INVALID),
-
             // Queue
             Arguments.of(typeOf<Queue<String>>(), VALID, VALID, VALID, NOT_RANDOM),
             Arguments.of(typeOf<AbstractQueue<String>>(), VALID, UNSUPPORTED, UNSUPPORTED, INVALID),
@@ -530,14 +517,12 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<LinkedTransferQueue<String>>(), VALID, VALID, VALID, VALID),
             Arguments.of(typeOf<BlockingQueue<String>>(), VALID, INVALID, VALID, VALID),
             Arguments.of(typeOf<TransferQueue<String>>(), VALID, INVALID, VALID, VALID),
-
             // Deque
             Arguments.of(typeOf<Deque<String>>(), VALID, VALID, VALID, VALID),
             Arguments.of(typeOf<ArrayDeque<String>>(), VALID, VALID, VALID, VALID),
             Arguments.of(typeOf<ConcurrentLinkedDeque<String>>(), VALID, VALID, VALID, INVALID),
             Arguments.of(typeOf<BlockingDeque<String>>(), VALID, INVALID, VALID, VALID),
             Arguments.of(typeOf<LinkedBlockingDeque<String>>(), VALID, VALID, VALID, VALID),
-
             // Map
             Arguments.of(typeOf<Map<String, String>>(), VALID, NOT_RANDOM, VALID, NOT_RANDOM),
             Arguments.of(typeOf<SortedMap<String, String>>(), VALID, INVALID, VALID, NOT_RANDOM),
@@ -552,20 +537,16 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<TreeMap<String, String>>(), VALID, NOT_RANDOM, NOT_RANDOM, NOT_RANDOM),
             Arguments.of(typeOf<ConcurrentHashMap<String, String>>(), VALID, NOT_RANDOM, NOT_RANDOM, NOT_RANDOM),
             Arguments.of(typeOf<ConcurrentSkipListMap<String, String>>(), VALID, NOT_RANDOM, NOT_RANDOM, NOT_RANDOM),
-
             // Uris class
             Arguments.of(typeOf<URI>(), VALID, NOT_RANDOM, VALID, VALID),
             Arguments.of(typeOf<URL>(), VALID, NOT_RANDOM, UNSUPPORTED, VALID),
-
             // Format class
             Arguments.of(typeOf<DateFormat>(), VALID, UNSUPPORTED, UNSUPPORTED, UNSUPPORTED),
             Arguments.of(typeOf<SimpleDateFormat>(), VALID, UNSUPPORTED, NOT_RANDOM, UNSUPPORTED),
             Arguments.of(typeOf<NumberFormat>(), VALID, UNSUPPORTED, UNSUPPORTED, UNSUPPORTED),
             Arguments.of(typeOf<DecimalFormat>(), VALID, UNSUPPORTED, NOT_RANDOM, UNSUPPORTED),
-
             Arguments.of(typeOf<Currency>(), VALID, UNSUPPORTED, UNSUPPORTED, UNSUPPORTED),
             Arguments.of(typeOf<Locale>(), VALID, UNSUPPORTED, VALID, VALID),
-
             // Atomic class
             Arguments.of(typeOf<AtomicBoolean>(), VALID, VALID, VALID, UNSUPPORTED),
             Arguments.of(typeOf<AtomicInteger>(), VALID, VALID, VALID, VALID),
@@ -573,19 +554,14 @@ class ComparisonParametizedTest {
             Arguments.of(typeOf<AtomicIntegerArray>(), VALID, VALID, IGNORE, UNSUPPORTED),
             Arguments.of(typeOf<AtomicLongArray>(), VALID, VALID, IGNORE, UNSUPPORTED),
             Arguments.of(typeOf<AtomicReference<String>>(), VALID, UNSUPPORTED, VALID, UNSUPPORTED),
-
             // Enum
             Arguments.of(typeOf<TestEnumClass>(), VALID, VALID, UNSUPPORTED, VALID),
-
             // Class
             Arguments.of(typeOf<TestClass>(), VALID, VALID, VALID, VALID),
-
             // Object
             Arguments.of(typeOf<TestObject>(), NOT_RANDOM, UNSUPPORTED, NOT_RANDOM, VALID),
-
             // Sealed class
             Arguments.of(typeOf<TestSealedClass>(), VALID, UNSUPPORTED, VALID, UNSUPPORTED),
-
             // Abstract class
             Arguments.of(typeOf<Number>(), VALID, UNSUPPORTED, UNSUPPORTED, UNSUPPORTED),
         )
