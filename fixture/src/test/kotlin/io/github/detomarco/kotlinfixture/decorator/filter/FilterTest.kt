@@ -37,6 +37,7 @@ class FilterTest {
         onGeneric { next() }.doReturn(1, 2, 3, 4, 5)
     }
 
+    @Suppress("UnnecessaryAbstractClass")
     abstract class FilterImpl : Filter
 
     private val mockFilter = mock<FilterImpl> {

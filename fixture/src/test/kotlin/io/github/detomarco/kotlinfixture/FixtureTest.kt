@@ -26,7 +26,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import kotlin.random.Random
 
-@Suppress("DataClassContainsFunctions")
+@Suppress("DataClassContainsFunctions", "DataClassShouldBeImmutable", "UnnecessaryAbstractClass")
 class FixtureTest {
 
     @Test

@@ -68,6 +68,7 @@ internal class FactoryMethodResolver : Resolver, PopulateInstance {
         }
     }
 
+    @Suppress("ReplaceSafeCallChainWithRun")
     private fun KClass<*>.companionObjectFactoryMethods(): List<KFunction<*>>? {
         return companionObject?.functions?.filter {
             (it.returnType.classifier as KClass<*>).isSubclassOf(this)

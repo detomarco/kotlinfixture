@@ -24,6 +24,7 @@ import org.junit.jupiter.api.assertThrows
 
 class FixtureRepeatCountTest {
 
+    @Suppress("DataClassShouldBeImmutable", "DataClassContainsFunctions")
     data class RepeatCountClass(val readOnly: List<Int>, private var private: List<Int>) {
         var member: List<Int>? = null
         val alsoReadOnly: List<Int>? = null

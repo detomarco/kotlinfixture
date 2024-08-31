@@ -117,7 +117,7 @@ class ConfigurationBuilderTest {
         val configuration = ConfigurationBuilder(Configuration()).build()
 
         assertThrows<UnsupportedOperationException> {
-            @Suppress("UNCHECKED_CAST")
+            @Suppress("UNCHECKED_CAST", "DontDowncastCollectionTypes")
             (configuration.properties as MutableMap<KClass<*>, Map<String, () -> Any?>>)[Properties::class] =
                 mapOf("property" to { 1 })
         }
@@ -167,6 +167,7 @@ class ConfigurationBuilderTest {
     }
 
     @Test
+    @Suppress("DontDowncastCollectionTypes")
     fun `instances is immutable`() {
         val configuration = ConfigurationBuilder(Configuration()).build()
 
@@ -206,7 +207,7 @@ class ConfigurationBuilderTest {
         val configuration = ConfigurationBuilder(Configuration()).build()
 
         assertThrows<UnsupportedOperationException> {
-            @Suppress("ReplacePutWithAssignment")
+            @Suppress("ReplacePutWithAssignment", "DontDowncastCollectionTypes")
             (configuration.filters as MutableMap<KType, Filter>).put(typeOf<Number>(), DefaultFilter(Unit))
         }
     }
@@ -241,7 +242,7 @@ class ConfigurationBuilderTest {
         val configuration = ConfigurationBuilder(Configuration()).build()
 
         assertThrows<UnsupportedOperationException> {
-            @Suppress("ReplacePutWithAssignment")
+            @Suppress("ReplacePutWithAssignment", "DontDowncastCollectionTypes")
             (configuration.subTypes as MutableMap<KClass<*>, KClass<*>>).put(Number::class, Double::class)
         }
     }

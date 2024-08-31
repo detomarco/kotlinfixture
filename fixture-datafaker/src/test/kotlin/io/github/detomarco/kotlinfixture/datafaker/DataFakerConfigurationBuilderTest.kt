@@ -174,7 +174,7 @@ class DataFakerConfigurationBuilderTest {
     }
 
     @Test
-    @Suppress("ExplicitCollectionElementAccessMethod")
+    @Suppress("ExplicitCollectionElementAccessMethod", "DontDowncastCollectionTypes")
     fun `properties is immutable`() {
         val configuration = DataFakerConfigurationBuilder(DataFakerConfiguration()).build()
         val function: Faker.(DataFakerConfiguration) -> Any? = { }

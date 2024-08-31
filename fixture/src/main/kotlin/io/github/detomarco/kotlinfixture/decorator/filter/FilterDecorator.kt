@@ -25,7 +25,7 @@ internal class FilterDecorator : Decorator {
 
     override fun decorate(resolver: Resolver): Resolver = FilterResolver(resolver)
 
-    private inner class FilterResolver(
+    private class FilterResolver(
         private val resolver: Resolver
     ) : Resolver {
 

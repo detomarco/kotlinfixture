@@ -25,10 +25,13 @@ internal class EnumResolver : Resolver {
 
     private val cache = mutableMapOf<KClass<*>, Iterator<*>>()
 
+    @Suppress("ReplaceSafeCallChainWithRun")
     override fun resolve(context: Context, obj: Any): Any? {
         if ((obj as? KClass<*>)?.java?.isEnum == true && obj.java.enumConstants?.isNotEmpty() == true) {
             return cache.getOrPut(obj) {
-                obj.java.enumConstants!!.toList().shuffled().circularIterator()
+                requireNotNull(obj.java.enumConstants).toList()
+                    .shuffled()
+                    .circularIterator()
             }.next()
         }
 

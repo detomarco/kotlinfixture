@@ -28,7 +28,7 @@ class SerializableTest {
     )
 
     @Test
-    @Suppress("UnnecessaryNotNullCheck")
+    @Suppress("UnnecessaryNotNullCheck", "ForbiddenMethodCall")
     fun `serializing and deserializing ErrorCodeDto should result in original instance`() {
         repeat(100) {
             val original = fixture<ErrorCodeDto>()
@@ -36,9 +36,9 @@ class SerializableTest {
             //  so we ensure we verify we don't use that constructor
             @Suppress("SENSELESS_COMPARISON")
             runCatching {
-                require(original.errorCode != null)
-                require(original.errorDetail != null)
-                require(original.errorDescription != null)
+                requireNotNull(original.errorCode)
+                requireNotNull(original.errorDetail)
+                requireNotNull(original.errorDescription)
             }.onFailure {
                 println(original)
                 throw IllegalArgumentException()
