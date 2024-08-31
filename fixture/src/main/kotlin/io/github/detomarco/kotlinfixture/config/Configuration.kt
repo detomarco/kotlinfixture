@@ -112,7 +112,6 @@ data class Configuration internal constructor(
         private val defaultResolvers = listOf(
             FactoryResolver(),
             SubTypeResolver(),
-
             CharResolver(),
             StringResolver(),
             PrimitiveResolver(),
@@ -130,13 +129,10 @@ data class Configuration internal constructor(
             FormatResolver(),
             CurrencyResolver(),
             LocaleResolver(),
-
             ObjectResolver(),
             SealedClassResolver(),
-
             AtomicKTypeResolver(),
             TupleKTypeResolver(),
-
             ArrayKTypeResolver(),
             PrimitiveArrayResolver(),
             HashtableKTypeResolver(),
@@ -144,14 +140,11 @@ data class Configuration internal constructor(
             EnumSetResolver(),
             EnumMapResolver(),
             MapKTypeResolver(),
-
             KTypeResolver(),
             FakeResolver(),
             KNamedPropertyResolver(),
             KFunctionResolver(),
-
             AbstractClassResolver(),
-
             ClassResolver(),
             FactoryMethodResolver()
         )

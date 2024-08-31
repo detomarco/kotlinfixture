@@ -38,7 +38,7 @@ interface Context {
 }
 
 /**
- * Return the configuration for a given strategy or [default] if none is found
+ * Return the configuration for a given strategy or [default] if none is found.
  * @suppress
  */
 inline fun <reified T> Context.strategyOrDefault(default: T): T = configuration.strategies[T::class] as? T ?: default

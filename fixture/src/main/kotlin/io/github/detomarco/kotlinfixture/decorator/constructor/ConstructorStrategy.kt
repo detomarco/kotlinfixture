@@ -30,7 +30,7 @@ interface ConstructorStrategy {
     fun constructors(context: Context, obj: KClass<*>): Collection<KFunction<*>>
 
     /**
-     * Constructors of the class with Serializable constructors filtered out
+     * Constructors of the class with Serializable constructors filtered out.
      */
     val KClass<*>.filteredConstructors: Collection<KFunction<*>>
         get() = constructors.filterNot { it.isSerializationConstructor() }

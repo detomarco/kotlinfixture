@@ -37,7 +37,7 @@ import kotlin.reflect.KType
  * the various options to be set and overridden.
  */
 @ConfigurationDsl
-@Suppress("TooManyFunctions")
+@Suppress("TooManyFunctions", "DoubleMutabilityForCollection")
 class ConfigurationBuilder(configuration: Configuration = Configuration()) {
 
     /**
@@ -423,7 +423,7 @@ class ConfigurationBuilder(configuration: Configuration = Configuration()) {
 
     @Deprecated("Use the filter<Class> { … } function", level = DeprecationLevel.ERROR)
     fun filter(type: KType, mapping: Sequence<Any?>.() -> Sequence<Any?>) {
-        filters[type] = (filters.getOrElse(type) { DefaultFilter(type) }).map(mapping)
+        filters[type] = filters.getOrElse(type) { DefaultFilter(type) }.map(mapping)
     }
 
     /**

@@ -19,7 +19,7 @@ package io.github.detomarco.kotlinfixture.datafaker.option
 import net.datafaker.providers.base.Finance
 
 /**
- * Different types of [CreditCard]
+ * Different types of [CreditCard].
  */
 @Suppress("unused")
 enum class CreditCard(internal val creditCardType: Finance.CreditCardType?) {
