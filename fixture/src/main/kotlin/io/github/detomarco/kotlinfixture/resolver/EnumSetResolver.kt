@@ -35,27 +35,29 @@ internal class EnumSetResolver : Resolver {
 
     @Suppress("ReturnCount", "ComplexMethod")
     override fun resolve(context: Context, obj: Any): Any? {
-        if (obj is KType && obj.classifier is KClass<*>) {
-            if (obj.classifier == EnumSet::class) {
-                return context.wrapNullability(obj) {
-                    val argType = obj.arguments.first().type!!
-                    val enumClass = argType.classifier as KClass<*>
+        if (obj is KType && obj.classifier is KClass<*>
+            && obj.classifier == EnumSet::class
+        ) {
+            return context.wrapNullability(obj) {
+                val argType = requireNotNull(obj.arguments.first().type) {
+                    "First argument required"
+                }
+                val enumClass = argType.classifier as KClass<*>
 
-                    val allValues = (enumClass.members.first { it.name == "values" }.call() as Array<*>).toMutableList()
+                val allValues = (enumClass.members.first { it.name == "values" }.call() as Array<*>).toMutableList()
 
-                    val selected = mutableListOf<Any>()
+                val selected = mutableListOf<Any>()
 
-                    repeat(random.nextInt(allValues.size + 1)) {
-                        val index = random.nextInt(allValues.size)
-                        selected.add(allValues.removeAt(index) as Any)
-                    }
+                repeat(random.nextInt(allValues.size + 1)) {
+                    val index = random.nextInt(allValues.size)
+                    selected.add(allValues.removeAt(index) as Any)
+                }
 
-                    if (selected.isNotEmpty()) {
-                        val last = selected.subList(1, selected.size).filterIsInstance<Enum<*>>().toTypedArray()
-                        enumSetOf.call(selected.first(), last)
-                    } else {
-                        enumSetNoneOf.call(enumClass.java) as EnumSet<*>
-                    }
+                if (selected.isNotEmpty()) {
+                    val last = selected.subList(1, selected.size).filterIsInstance<Enum<*>>().toTypedArray()
+                    enumSetOf.call(selected.first(), last)
+                } else {
+                    enumSetNoneOf.call(enumClass.java) as EnumSet<*>
                 }
             }
         }

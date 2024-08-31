@@ -30,7 +30,7 @@ internal class EnumMapResolver : Resolver {
     private val enumMapConstructor by lazy {
         EnumMap::class.constructors.first {
             it.parameters.size == 1 &&
-                it.parameters[0].type.classifier?.starProjectedType == Class::class.starProjectedType
+                    it.parameters[0].type.classifier?.starProjectedType == Class::class.starProjectedType
         }
     }
 
@@ -39,11 +39,9 @@ internal class EnumMapResolver : Resolver {
     }
 
     override fun resolve(context: Context, obj: Any): Any? {
-        if (obj is KType && obj.classifier is KClass<*>) {
-            if (obj.classifier == EnumMap::class) {
-                return context.wrapNullability(obj) {
-                    generateEnumMap(obj)
-                }
+        if (obj is KType && obj.classifier is KClass<*> && obj.classifier == EnumMap::class) {
+            return context.wrapNullability(obj) {
+                generateEnumMap(obj)
             }
         }
 
@@ -52,7 +50,7 @@ internal class EnumMapResolver : Resolver {
 
     @Suppress("ReturnCount")
     private fun Context.generateEnumMap(obj: KType): Any {
-        val argType = obj.arguments.first().type!!
+        val argType = requireNotNull(obj.arguments[0].type) {"First argument required"}
         val enumClass = argType.classifier as KClass<*>
         val valueClass = obj.arguments[1].type?.classifier as KClass<*>
 
