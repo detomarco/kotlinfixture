@@ -19,11 +19,11 @@ package io.github.detomarco.kotlinfixture.decorator
 import io.github.detomarco.kotlinfixture.resolver.Resolver
 
 /**
- * A [Decorator] allows you to intercept and modify the [Resolver] chain
+ * A [Decorator] allows you to intercept and modify the [Resolver] chain.
  */
 interface Decorator {
     /**
-     * Wrap the provided [resolver]
+     * Wrap the provided [resolver].
      */
     fun decorate(resolver: Resolver): Resolver
 }

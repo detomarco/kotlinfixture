@@ -20,6 +20,7 @@ import io.github.detomarco.kotlinfixture.Context
 import io.github.detomarco.kotlinfixture.resolver.Resolver
 import java.util.concurrent.locks.ReentrantLock
 
+@Suppress("LateinitUsage")
 internal class DefaultFilter(private val obj: Any) : Filter {
     override val lock = ReentrantLock()
 

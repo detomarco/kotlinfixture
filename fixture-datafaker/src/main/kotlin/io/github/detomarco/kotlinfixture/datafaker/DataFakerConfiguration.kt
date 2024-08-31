@@ -29,7 +29,7 @@ import java.time.temporal.ChronoUnit
 import java.util.Locale
 
 /**
- * Configuration for the DataFakerStrategy
+ * Configuration for the DataFakerStrategy.
  */
 data class DataFakerConfiguration internal constructor(
     internal val creditCard: CreditCard = CreditCard.Any,
@@ -47,7 +47,7 @@ data class DataFakerConfiguration internal constructor(
         private fun entry(
             propertyName: String,
             generator: Faker.(DataFakerConfiguration) -> Any?
-        ): Pair<String, Faker.(DataFakerConfiguration) -> Any?> = Pair(propertyName, generator)
+        ): Pair<String, Faker.(DataFakerConfiguration) -> Any?> = propertyName to generator
 
         private val defaultMap = mapOf(
             // Address
@@ -71,54 +71,45 @@ data class DataFakerConfiguration internal constructor(
             entry("streetSuffix") { address().streetSuffix() },
             entry("timeZone") { address().timeZone() },
             entry("zipCode") { address().zipCode() },
-
             // Avatar
             entry("image") { avatar().image() },
-
             // Aviation
             entry("aircraft") { aviation().aircraft() },
             entry("airport") { aviation().airport() },
             @Suppress("SpellCheckingInspection")
-            (entry("METAR") { aviation().METAR() }),
-
+            entry("METAR") { aviation().METAR() },
             // Business
             entry("creditCardExpiry") { business().creditCardExpiry() },
             entry("creditCardNumber") { business().creditCardNumber() },
             entry("creditCardType") { business().creditCardType() },
-
             // Code
-            (entry("asin") { code().asin() }),
+            entry("asin") { code().asin() },
             entry("ean13") { code().ean13() },
             entry("ean8") { code().ean8() },
-            (entry("gtin13") { code().gtin13() }),
-            (entry("gtin8") { code().gtin8() }),
-            (entry("imei") { code().imei() }),
+            entry("gtin13") { code().gtin13() },
+            entry("gtin8") { code().gtin8() },
+            entry("imei") { code().imei() },
             entry("isbn10") { code().isbn10(it.isbn10Separator) },
             entry("isbn13") { code().isbn13(it.isbn13Separator) },
             entry("isbnGroup") { code().isbnGroup() },
             entry("isbnGs1") { code().isbnGs1() },
             entry("isbnRegistrant") { code().isbnRegistrant() },
-
             // Commerce
             entry("price") { commerce().price() },
             entry("productName") { commerce().productName() },
-
             // Company
             entry("logo") { company().logo() },
             entry("url") { company().url() },
-
             // Country
             entry("countryCode2") { country().countryCode2() },
             entry("countryCode3") { country().countryCode3() },
             entry("currency") { country().currency() },
             entry("currencyCode") { country().currencyCode() },
             entry("flag") { country().flag() },
-
             // Currency
             entry("currencyName") {
                 money().currency()
             },
-
             // DateAndTime
             entry("birthday") { timeAndDate().birthday() },
             entry("dateOfBirth") { timeAndDate().birthday() },
@@ -126,20 +117,16 @@ data class DataFakerConfiguration internal constructor(
             entry("age") {
                 ChronoUnit.YEARS.between(timeAndDate().birthday(), LocalDate.now())
             },
-
             // Demographic
             entry("maritalStatus") { demographic().maritalStatus() },
             entry("race") { demographic().race() },
             entry("sex") { demographic().sex() },
-
             // Educator
             entry("secondarySchool") { educator().secondarySchool() },
             entry("university") { educator().university() },
-
             // File
             entry("fileName") { file().fileName() },
             entry("mimeType") { file().mimeType() },
-
             // Finance
             entry("bic") { finance().bic() },
             entry("creditCard") {
@@ -148,15 +135,13 @@ data class DataFakerConfiguration internal constructor(
                     else -> finance().creditCard(it.creditCard.creditCardType)
                 }
             },
-            (entry("iban") { finance().iban() }),
-
+            entry("iban") { finance().iban() },
             // IdNumber
             entry("ssn") { idNumber().ssnValid() },
             entry("svSeSsn") {
                 val faker = Faker(Locale("sv", "SE"))
                 faker.idNumber().valid()
             },
-
             // Internet
             entry("domainName") { internet().domainName() },
             entry("emailAddress") { internet().emailAddress() },
@@ -167,9 +152,9 @@ data class DataFakerConfiguration internal constructor(
                 }
             },
             entry("ipV4Address") { internet().ipV4Address() },
-            (entry("ipV4Cidr") { internet().ipV4Cidr() }),
+            entry("ipV4Cidr") { internet().ipV4Cidr() },
             entry("ipV6Address") { internet().ipV6Address() },
-            (entry("ipV6Cidr") { internet().ipV6Cidr() }),
+            entry("ipV6Cidr") { internet().ipV6Cidr() },
             entry("macAddress") { internet().macAddress() },
             entry("password") {
                 internet().password(
@@ -187,7 +172,6 @@ data class DataFakerConfiguration internal constructor(
                     else -> internet().userAgent(it.userAgent.userAgent)
                 }
             },
-
             // Name
             entry("firstName") { name().firstName() },
             entry("fullName") { name().fullName() },
@@ -196,16 +180,12 @@ data class DataFakerConfiguration internal constructor(
             entry("nameWithMiddle") { name().nameWithMiddle() },
             entry("prefix") { name().prefix() },
             entry("suffix") { name().suffix() },
-
             // Phone Number
             entry("cellPhone") { phoneNumber().cellPhone() },
             entry("phoneNumber") { phoneNumber().phoneNumber() },
-
             // Stock
-            @Suppress("SpellCheckingInspection")
-            (entry("nsdqSymbol") { stock().nsdqSymbol() }),
+            entry("nsdqSymbol") { stock().nsdqSymbol() },
             entry("nyseSymbol") { stock().nyseSymbol() },
-
             // Weather
             entry("temperature") {
                 when (it.temperature) {
@@ -220,7 +200,7 @@ data class DataFakerConfiguration internal constructor(
 }
 
 /**
- * Fake object generation with `dataFakerStrategy`
+ * Fake object generation with `dataFakerStrategy`.
  *
  * The faker intercepts the generation of named properties so their values can be replaced with fake data generated by
  * the [Java Faker](https://github.com/DiUS/java-faker) library
