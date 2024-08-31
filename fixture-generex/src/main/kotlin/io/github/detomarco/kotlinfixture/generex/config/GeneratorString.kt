@@ -67,6 +67,5 @@ fun Generator<String>.regexToRandom(regex: String, minLength: Int = 1, maxLength
  * IMPORTANT: Be careful with object creation inside the generation function as it will be called
  *              for every instance of the object you create.
  */
-fun Generator<String>.regexToRandom(regex: Regex, minLength: Int = 1, maxLength: Int = Int.MAX_VALUE): String {
-    return regexToRandom(regex.pattern, minLength, maxLength)
-}
+fun Generator<String>.regexToRandom(regex: Regex, minLength: Int = 1, maxLength: Int = Int.MAX_VALUE): String =
+    regexToRandom(regex.pattern, minLength, maxLength)

@@ -20,10 +20,11 @@ import io.github.detomarco.kotlinfixture.Fixture
 import kotlin.random.Random
 
 /**
- * Generators for `factory` and `property` configuration
+ * Generators for `factory` and `property` configuration.
  * @property random The fixtures random, which may be seeded
  * @property fixture A fixture to be able to generate nested objects
  */
+@Suppress("OutdatedDocumentation")
 interface Generator<T> {
     val random: Random
     val fixture: Fixture

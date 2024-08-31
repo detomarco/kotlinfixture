@@ -44,8 +44,8 @@ internal class HashtableKTypeResolver : Resolver {
 
     @Suppress("ReturnCount")
     private fun Context.populateCollection(obj: KType, collection: Dictionary<Any?, Any?>): Any {
-        val keyType = obj.arguments[0].type!!
-        val valueType = obj.arguments[1].type!!
+        val keyType = requireNotNull(obj.arguments[0].type) {"First argument required"}
+        val valueType = requireNotNull(obj.arguments[1].type) {"Second argument required"}
 
         repeat(configuration.repeatCount()) {
             val key = resolve(keyType)
@@ -68,9 +68,9 @@ internal class HashtableKTypeResolver : Resolver {
         Dictionary::class,
         Hashtable::class -> Hashtable()
 
-        else -> {
+        else ->
             @Suppress("USELESS_CAST")
             null as Dictionary<Any?, Any?>?
-        }
+
     }
 }

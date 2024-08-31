@@ -19,16 +19,16 @@ package io.github.detomarco.kotlinfixture.config
 import java.util.Date
 
 /**
- * Generate any date before the [before] date
+ * Generate any date before the [before] date.
  */
 fun Generator<Date>.before(before: Date) = Date(random.nextLong(0L, before.time))
 
 /**
- * Generate any date after the [after] date
+ * Generate any date after the [after] date.
  */
 fun Generator<Date>.after(after: Date) = Date(random.nextLong(after.time, Long.MAX_VALUE))
 
 /**
- * Generate any date between the [start] and [end] dates
+ * Generate any date between the [start] and [end] dates.
  */
 fun Generator<Date>.between(start: Date, end: Date) = Date(random.nextLong(start.time, end.time))

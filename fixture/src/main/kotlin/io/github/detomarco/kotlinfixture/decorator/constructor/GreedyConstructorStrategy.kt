@@ -27,7 +27,6 @@ import kotlin.reflect.KFunction
  * In case of two constructors with an equal number of parameters, the ordering is unspecified.
  */
 object GreedyConstructorStrategy : ConstructorStrategy {
-    override fun constructors(context: Context, obj: KClass<*>): Collection<KFunction<*>> {
-        return obj.filteredConstructors.sortedByDescending { it.parameters.size }
-    }
+    override fun constructors(context: Context, obj: KClass<*>): Collection<KFunction<*>> =
+        obj.filteredConstructors.sortedByDescending { it.parameters.size }
 }
