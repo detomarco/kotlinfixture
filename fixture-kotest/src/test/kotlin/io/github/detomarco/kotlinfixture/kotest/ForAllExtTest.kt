@@ -19,6 +19,7 @@ package io.github.detomarco.kotlinfixture.kotest
 import io.github.detomarco.kotlinfixture.Fixture
 import io.github.detomarco.kotlinfixture.kotlinFixture
 import io.kotest.assertions.throwables.shouldThrow
+import io.kotest.common.ExperimentalKotest
 import io.kotest.matchers.shouldBe
 import io.kotest.property.PropTestConfig
 import io.kotest.property.PropertyTesting
@@ -68,6 +69,7 @@ class ForAllExtTest {
         private const val ITERATIONS = 10
         private val fixture = kotlinFixture()
 
+        @OptIn(ExperimentalKotest::class)
         @JvmStatic
         @Suppress("LongMethod")
         fun data(): Array<TestCase> = arrayOf(
