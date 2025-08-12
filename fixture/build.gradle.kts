@@ -23,8 +23,7 @@ plugins {
 
 val classgraphVersion: String by project
 val jodaTimeVersion: String by project
-val mockitoKotlinVersion: String by project
-val serializationVersion: String by project
+val mockitoVersion: String by project
 val marcellogalhardoVersion: String by project
 val flextradeVersion: String by project
 val easyrandomVersion: String by project
@@ -38,7 +37,7 @@ dependencies {
     compileOnly("joda-time:joda-time:${jodaTimeVersion}")
     testImplementation("joda-time:joda-time:${jodaTimeVersion}")
 
-    testImplementation("org.mockito.kotlin:mockito-kotlin:${mockitoKotlinVersion}")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:${mockitoVersion}")
 
     testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${kotlinxSerializatioVersion}")
     // Used for ComparisonTest
