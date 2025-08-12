@@ -15,8 +15,7 @@
  */
 
 import com.adarshr.gradle.testlogger.theme.ThemeType
-import org.gradle.kotlin.dsl.assign
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jreleaser.model.Active
 
 plugins {
@@ -60,8 +59,11 @@ subprojects {
         testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
     }
 
-    tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlin {
+        jvmToolchain(17)
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_17
+        }
     }
 
     detekt {
@@ -110,4 +112,3 @@ jreleaser {
         }
     }
 }
-
