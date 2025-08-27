@@ -29,6 +29,7 @@ plugins {
 
 val detektGradlePluginVersion: String by project
 val junitVersion: String by project
+val junitPlatformVersion: String by project
 val mockkVersion: String by project
 val kotestVersion: String by project
 
@@ -53,9 +54,12 @@ subprojects {
 
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektGradlePluginVersion")
 
-        testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
-        testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-        testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
+//        testImplementation(platform("org.junit:junit-bom:$junitVersion"))
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitPlatformVersion")
+        testRuntimeOnly("org.junit.platform:junit-platform-engine:$junitPlatformVersion")
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitPlatformVersion")
+
+        testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
         testImplementation("io.mockk:mockk:$mockkVersion")
         testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
     }

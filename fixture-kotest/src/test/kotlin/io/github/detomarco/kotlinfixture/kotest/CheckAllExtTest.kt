@@ -18,7 +18,7 @@ package io.github.detomarco.kotlinfixture.kotest
 
 import io.github.detomarco.kotlinfixture.Fixture
 import io.github.detomarco.kotlinfixture.kotlinFixture
-import io.kotest.assertions.fail
+import io.kotest.assertions.AssertionErrorBuilder.Companion.fail
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
 import io.kotest.property.PropTestConfig
