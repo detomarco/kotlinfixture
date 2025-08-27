@@ -73,6 +73,7 @@ class CheckAllExtTest {
 
         @JvmStatic
         @Suppress("LongMethod")
+        @OptIn(io.kotest.common.ExperimentalKotest::class)
         fun data(): Array<TestCase> = arrayOf(
 
             // 1 parameter

@@ -60,8 +60,11 @@ subprojects {
         testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
     }
 
-    tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlin {
+        jvmToolchain(17)
+        compilerOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+        }
     }
 
     detekt {

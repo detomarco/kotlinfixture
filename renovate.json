@@ -1,9 +1,10 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    ":automergePatch",
-    ":dependencyDashboard",
-    "group:monorepos",
-    "group:recommended"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        ":automergePatch",
+        ":automergeMinor",
+        ":dependencyDashboard",
+        "group:monorepos",
+        "group:recommended"
+    ]
 }
