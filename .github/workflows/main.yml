@@ -76,5 +76,5 @@ jobs:
     - name: Validate configurations
       run: ./gradlew jreleaserConfig
 
-    - name: Publish package to maven central
-      run: ./gradlew jreleaserFullRelease
+#    - name: Publish package to maven central
+#      run: ./gradlew jreleaserFullRelease

@@ -15,8 +15,6 @@
  */
 
 import com.adarshr.gradle.testlogger.theme.ThemeType
-import org.gradle.kotlin.dsl.assign
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jreleaser.model.Active
 
 plugins {
@@ -32,11 +30,12 @@ val junitVersion: String by project
 val junitPlatformVersion: String by project
 val mockkVersion: String by project
 val kotestVersion: String by project
-
+val libVersion = (System.getenv("LIB_VERSION") ?: System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
+    ?.replaceFirst("refs/tags/", "") ?: "unspecified"
+println("Lib Version $libVersion")
 subprojects {
     group = "io.github.detomarco.kotlinfixture"
-    version = (System.getenv("LIB_VERSION") ?: System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
-        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
+    version = libVersion
 
     apply {
         plugin("org.jetbrains.kotlin.jvm")
