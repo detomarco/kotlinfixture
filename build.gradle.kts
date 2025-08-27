@@ -30,11 +30,17 @@ val junitVersion: String by project
 val junitPlatformVersion: String by project
 val mockkVersion: String by project
 val kotestVersion: String by project
-val libVersion = (System.getenv("LIB_VERSION") ?: System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
-    ?.replaceFirst("refs/tags/", "") ?: "unspecified"
-println("Lib Version $libVersion")
+
+val libGroup = "io.github.detomarco.kotlinfixture"
+val libVersion = (System.getenv("GITHUB_REF"))
+    ?.replaceFirst("refs/tags/", "") ?: "not_specified"
+println("Lib Version: $libVersion")
+
+group = libGroup
+version = libVersion
+
 subprojects {
-    group = "io.github.detomarco.kotlinfixture"
+    group = libGroup
     version = libVersion
 
     apply {
