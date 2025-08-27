@@ -28,7 +28,7 @@ val serializationVersion: String by project
 val marcellogalhardoVersion: String by project
 val flextradeVersion: String by project
 val easyrandomVersion: String by project
-val kotlinxSerializatioVersion: String by project
+val kotlinxSerializationVersion: String by project
 
 dependencies {
 
@@ -40,7 +40,7 @@ dependencies {
 
     testImplementation("org.mockito.kotlin:mockito-kotlin:${mockitoKotlinVersion}")
 
-    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${kotlinxSerializatioVersion}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${kotlinxSerializationVersion}")
     // Used for ComparisonTest
     testImplementation("com.github.marcellogalhardo:kotlin-fixture:${marcellogalhardoVersion}")
     testImplementation("com.flextrade.jfixture:kfixture:${flextradeVersion}")
