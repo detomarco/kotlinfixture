@@ -76,6 +76,11 @@ subprojects {
         }
     }
 
+    java {
+        withSourcesJar()
+        withJavadocJar()
+    }
+
     detekt {
         allRules = true
         buildUponDefaultConfig = true
