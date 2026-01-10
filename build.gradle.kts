@@ -59,24 +59,26 @@ subprojects {
 
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektGradlePluginVersion")
 
-//        testImplementation(platform("org.junit:junit-bom:$junitVersion"))
-        testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitPlatformVersion")
-        testRuntimeOnly("org.junit.platform:junit-platform-engine:$junitPlatformVersion")
-        testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitPlatformVersion")
+        testImplementation(platform("org.junit:junit-bom:$junitVersion"))
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+        testRuntimeOnly("org.junit.platform:junit-platform-engine")
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-        testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+        testImplementation("org.junit.jupiter:junit-jupiter")
         testImplementation("io.mockk:mockk:$mockkVersion")
         testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
     }
 
     kotlin {
-        jvmToolchain(17)
         compilerOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
         }
     }
 
     java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
         withSourcesJar()
         withJavadocJar()
     }
