@@ -43,9 +43,8 @@ enum class CreditCard(internal val creditCardType: Finance.CreditCardType?) {
 
     Mastercard(Finance.CreditCardType.MASTERCARD),
 
-    Solo(Finance.CreditCardType.SOLO),
+    Visa(Finance.CreditCardType.VISA),
 
-    Switch(Finance.CreditCardType.SWITCH),
-
-    Visa(Finance.CreditCardType.VISA)
+    @Suppress("SpellCheckingInspection")
+    Unionpay(Finance.CreditCardType.UNIONPAY)
 }
